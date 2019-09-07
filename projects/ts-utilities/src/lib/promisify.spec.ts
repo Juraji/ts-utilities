@@ -1,106 +1,105 @@
-// Placeholder type to reduce line length in tests
 import { NodeCallback, NodeResultCallback, promisify } from "./promisify";
 
 describe("Global utility: #promisify", () => {
     class SuccessfulCallbacksClass {
 
-        public fn1(callback: NodeResultCallback<string>): void {
+        public result0arg(callback: NodeResultCallback<string>): void {
             callback(undefined, "success");
         }
 
-        public fn2(callback: NodeCallback): void {
+        public void0Arg(callback: NodeCallback): void {
             callback();
         }
 
-        public fn3(arg1: string, callback: NodeResultCallback<string>): void {
+        public result1Arg(arg1: string, callback: NodeResultCallback<string>): void {
             callback(undefined, arg1);
         }
 
-        public fn4(arg1: string, callback: NodeCallback): void {
+        public void1Arg(arg1: string, callback: NodeCallback): void {
             callback();
         }
 
-        public fn5(arg1: string, arg2: string, callback: NodeResultCallback<string[]>): void {
+        public result2Args(arg1: string, arg2: string, callback: NodeResultCallback<string[]>): void {
             callback(undefined, [arg1, arg2]);
         }
 
-        public fn6(arg1: string, arg2: string, callback: NodeCallback): void {
+        public void2Args(arg1: string, arg2: string, callback: NodeCallback): void {
             callback();
         }
 
-        public fn7(arg1: string, arg2: string, arg3: string, callback: NodeResultCallback<string[]>): void {
+        public result3Args(arg1: string, arg2: string, arg3: string, callback: NodeResultCallback<string[]>): void {
             callback(undefined, [arg1, arg2, arg3]);
         }
 
-        public fn8(arg1: string, arg2: string, arg3: string, callback: NodeCallback): void {
+        public void3Args(arg1: string, arg2: string, arg3: string, callback: NodeCallback): void {
             callback();
         }
 
-        public fn9(arg1: string, arg2: string, arg3: string, arg4: string, callback: NodeResultCallback<string[]>): void {
+        public result4Args(arg1: string, arg2: string, arg3: string, arg4: string, callback: NodeResultCallback<string[]>): void {
             callback(undefined, [arg1, arg2, arg3, arg4]);
         }
 
-        public fn10(arg1: string, arg2: string, arg3: string, arg4: string, callback: NodeCallback): void {
+        public void4Args(arg1: string, arg2: string, arg3: string, arg4: string, callback: NodeCallback): void {
             callback();
         }
 
-        public fn11(arg1: string, arg2: string, arg3: string, arg4: string, arg5: string,
-                    callback: NodeResultCallback<string[]>): void {
+        public result5Args(arg1: string, arg2: string, arg3: string, arg4: string, arg5: string,
+                           callback: NodeResultCallback<string[]>): void {
             callback(undefined, [arg1, arg2, arg3, arg4, arg5]);
         }
 
-        public fn12(arg1: string, arg2: string, arg3: string, arg4: string, arg5: string, callback: NodeCallback): void {
+        public void5Args(arg1: string, arg2: string, arg3: string, arg4: string, arg5: string, callback: NodeCallback): void {
             callback();
         }
     }
 
     class FailingCallbacksClass {
-        public fn1(callback: NodeResultCallback<string>): void {
+        public result0arg(callback: NodeResultCallback<string>): void {
             callback(new Error("fail"), undefined);
         }
 
-        public fn2(callback: NodeCallback): void {
+        public void0Arg(callback: NodeCallback): void {
             callback(new Error("fail"));
         }
 
-        public fn3(arg1: string, callback: NodeResultCallback<string>): void {
+        public result1Arg(arg1: string, callback: NodeResultCallback<string>): void {
             callback(new Error("fail"), undefined);
         }
 
-        public fn4(arg1: string, callback: NodeCallback): void {
+        public void1Arg(arg1: string, callback: NodeCallback): void {
             callback(new Error("fail"));
         }
 
-        public fn5(arg1: string, arg2: string, callback: NodeResultCallback<string[]>): void {
+        public result2Args(arg1: string, arg2: string, callback: NodeResultCallback<string[]>): void {
             callback(new Error("fail"), undefined);
         }
 
-        public fn6(arg1: string, arg2: string, callback: NodeCallback): void {
+        public void2Args(arg1: string, arg2: string, callback: NodeCallback): void {
             callback(new Error("fail"));
         }
 
-        public fn7(arg1: string, arg2: string, arg3: string, callback: NodeResultCallback<string[]>): void {
+        public result3Args(arg1: string, arg2: string, arg3: string, callback: NodeResultCallback<string[]>): void {
             callback(new Error("fail"), undefined);
         }
 
-        public fn8(arg1: string, arg2: string, arg3: string, callback: NodeCallback): void {
+        public void3Args(arg1: string, arg2: string, arg3: string, callback: NodeCallback): void {
             callback(new Error("fail"));
         }
 
-        public fn9(arg1: string, arg2: string, arg3: string, arg4: string, callback: NodeResultCallback<string[]>): void {
+        public result4Args(arg1: string, arg2: string, arg3: string, arg4: string, callback: NodeResultCallback<string[]>): void {
             callback(new Error("fail"), undefined);
         }
 
-        public fn10(arg1: string, arg2: string, arg3: string, arg4: string, callback: NodeCallback): void {
+        public void4Args(arg1: string, arg2: string, arg3: string, arg4: string, callback: NodeCallback): void {
             callback(new Error("fail"));
         }
 
-        public fn11(arg1: string, arg2: string, arg3: string, arg4: string, arg5: string,
-                    callback: NodeResultCallback<string[]>): void {
+        public result5Args(arg1: string, arg2: string, arg3: string, arg4: string, arg5: string,
+                           callback: NodeResultCallback<string[]>): void {
             callback(new Error("fail"), undefined);
         }
 
-        public fn12(arg1: string, arg2: string, arg3: string, arg4: string, arg5: string, callback: NodeCallback): void {
+        public void5Args(arg1: string, arg2: string, arg3: string, arg4: string, arg5: string, callback: NodeCallback): void {
             callback(new Error("fail"));
         }
     }
@@ -110,10 +109,10 @@ describe("Global utility: #promisify", () => {
 
     describe("should support the following inputs", () => {
         it("(callback: NodeResultCallback) => void", async () => {
-            const successSpy = spyOn(successfulCallbacks, "fn1").and.callThrough();
-            const failSpy = spyOn(failingCallbacks, "fn1").and.callThrough();
-            const success = promisify(successfulCallbacks.fn1)();
-            const fail = promisify(failingCallbacks.fn1)();
+            const successSpy = spyOn(successfulCallbacks, "result0arg").and.callThrough();
+            const failSpy = spyOn(failingCallbacks, "result0arg").and.callThrough();
+            const success = promisify(successfulCallbacks.result0arg)();
+            const fail = promisify(failingCallbacks.result0arg)();
 
             await expectAsync(success).toBeResolvedTo("success");
             await expectAsync(fail).toBeRejectedWith(new Error("fail"));
@@ -123,10 +122,10 @@ describe("Global utility: #promisify", () => {
         });
 
         it("(callback: NodeCallback) => void", async () => {
-            const successSpy = spyOn(successfulCallbacks, "fn2").and.callThrough();
-            const failSpy = spyOn(failingCallbacks, "fn2").and.callThrough();
-            const success = promisify(successfulCallbacks.fn2)();
-            const fail = promisify(failingCallbacks.fn2)();
+            const successSpy = spyOn(successfulCallbacks, "void0Arg").and.callThrough();
+            const failSpy = spyOn(failingCallbacks, "void0Arg").and.callThrough();
+            const success = promisify(successfulCallbacks.void0Arg)();
+            const fail = promisify(failingCallbacks.void0Arg)();
 
             await expectAsync(success).toBeResolved();
             await expectAsync(fail).toBeRejectedWith(new Error("fail"));
@@ -136,10 +135,10 @@ describe("Global utility: #promisify", () => {
         });
 
         it("(arg1: T1, callback: NodeResultCallback) => void", async () => {
-            const successSpy = spyOn(successfulCallbacks, "fn3").and.callThrough();
-            const failSpy = spyOn(failingCallbacks, "fn3").and.callThrough();
-            const success = promisify(successfulCallbacks.fn3)("arg1");
-            const fail = promisify(failingCallbacks.fn3)("arg1");
+            const successSpy = spyOn(successfulCallbacks, "result1Arg").and.callThrough();
+            const failSpy = spyOn(failingCallbacks, "result1Arg").and.callThrough();
+            const success = promisify(successfulCallbacks.result1Arg)("arg1");
+            const fail = promisify(failingCallbacks.result1Arg)("arg1");
 
             await expectAsync(success).toBeResolvedTo("arg1");
             await expectAsync(fail).toBeRejectedWith(new Error("fail"));
@@ -149,10 +148,10 @@ describe("Global utility: #promisify", () => {
         });
 
         it("(arg1: T1, callback: NodeCallback) => void", async () => {
-            const successSpy = spyOn(successfulCallbacks, "fn4").and.callThrough();
-            const failSpy = spyOn(failingCallbacks, "fn4").and.callThrough();
-            const success = promisify(successfulCallbacks.fn4)("arg1");
-            const fail = promisify(failingCallbacks.fn4)("arg1");
+            const successSpy = spyOn(successfulCallbacks, "void1Arg").and.callThrough();
+            const failSpy = spyOn(failingCallbacks, "void1Arg").and.callThrough();
+            const success = promisify(successfulCallbacks.void1Arg)("arg1");
+            const fail = promisify(failingCallbacks.void1Arg)("arg1");
 
             await expectAsync(success).toBeResolved();
             await expectAsync(fail).toBeRejectedWith(new Error("fail"));
@@ -162,10 +161,10 @@ describe("Global utility: #promisify", () => {
         });
 
         it("(arg1: T1, arg2: T2, callback: NodeResultCallback) => void", async () => {
-            const successSpy = spyOn(successfulCallbacks, "fn5").and.callThrough();
-            const failSpy = spyOn(failingCallbacks, "fn5").and.callThrough();
-            const success = promisify(successfulCallbacks.fn5)("arg1", "arg2");
-            const fail = promisify(failingCallbacks.fn5)("arg1", "arg2");
+            const successSpy = spyOn(successfulCallbacks, "result2Args").and.callThrough();
+            const failSpy = spyOn(failingCallbacks, "result2Args").and.callThrough();
+            const success = promisify(successfulCallbacks.result2Args)("arg1", "arg2");
+            const fail = promisify(failingCallbacks.result2Args)("arg1", "arg2");
 
             await expectAsync(success).toBeResolvedTo(["arg1", "arg2"]);
             await expectAsync(fail).toBeRejectedWith(new Error("fail"));
@@ -175,10 +174,10 @@ describe("Global utility: #promisify", () => {
         });
 
         it("(arg1: T1, arg2: T2, callback: NodeCallback) => void", async () => {
-            const successSpy = spyOn(successfulCallbacks, "fn6").and.callThrough();
-            const failSpy = spyOn(failingCallbacks, "fn6").and.callThrough();
-            const success = promisify(successfulCallbacks.fn6)("arg1", "arg2");
-            const fail = promisify(failingCallbacks.fn6)("arg1", "arg2");
+            const successSpy = spyOn(successfulCallbacks, "void2Args").and.callThrough();
+            const failSpy = spyOn(failingCallbacks, "void2Args").and.callThrough();
+            const success = promisify(successfulCallbacks.void2Args)("arg1", "arg2");
+            const fail = promisify(failingCallbacks.void2Args)("arg1", "arg2");
 
             await expectAsync(success).toBeResolved();
             await expectAsync(fail).toBeRejectedWith(new Error("fail"));
@@ -188,10 +187,10 @@ describe("Global utility: #promisify", () => {
         });
 
         it("(arg1: T1, arg2: T2, arg3: T3, callback: NodeResultCallback) => void", async () => {
-            const successSpy = spyOn(successfulCallbacks, "fn7").and.callThrough();
-            const failSpy = spyOn(failingCallbacks, "fn7").and.callThrough();
-            const success = promisify(successfulCallbacks.fn7)("arg1", "arg2", "arg3");
-            const fail = promisify(failingCallbacks.fn7)("arg1", "arg2", "arg3");
+            const successSpy = spyOn(successfulCallbacks, "result3Args").and.callThrough();
+            const failSpy = spyOn(failingCallbacks, "result3Args").and.callThrough();
+            const success = promisify(successfulCallbacks.result3Args)("arg1", "arg2", "arg3");
+            const fail = promisify(failingCallbacks.result3Args)("arg1", "arg2", "arg3");
 
             await expectAsync(success).toBeResolvedTo(["arg1", "arg2", "arg3"]);
             await expectAsync(fail).toBeRejectedWith(new Error("fail"));
@@ -201,10 +200,10 @@ describe("Global utility: #promisify", () => {
         });
 
         it("(arg1: T1, arg2: T2, arg3: T3, callback: NodeCallback) => void", async () => {
-            const successSpy = spyOn(successfulCallbacks, "fn8").and.callThrough();
-            const failSpy = spyOn(failingCallbacks, "fn8").and.callThrough();
-            const success = promisify(successfulCallbacks.fn8)("arg1", "arg2", "arg3");
-            const fail = promisify(failingCallbacks.fn8)("arg1", "arg2", "arg3");
+            const successSpy = spyOn(successfulCallbacks, "void3Args").and.callThrough();
+            const failSpy = spyOn(failingCallbacks, "void3Args").and.callThrough();
+            const success = promisify(successfulCallbacks.void3Args)("arg1", "arg2", "arg3");
+            const fail = promisify(failingCallbacks.void3Args)("arg1", "arg2", "arg3");
 
             await expectAsync(success).toBeResolved();
             await expectAsync(fail).toBeRejectedWith(new Error("fail"));
@@ -214,10 +213,10 @@ describe("Global utility: #promisify", () => {
         });
 
         it("(arg1: T1, arg2: T2, arg3: T3, arg4: T4, callback: NodeResultCallback) => void", async () => {
-            const successSpy = spyOn(successfulCallbacks, "fn9").and.callThrough();
-            const failSpy = spyOn(failingCallbacks, "fn9").and.callThrough();
-            const success = promisify(successfulCallbacks.fn9)("arg1", "arg2", "arg3", "arg4");
-            const fail = promisify(failingCallbacks.fn9)("arg1", "arg2", "arg3", "arg4");
+            const successSpy = spyOn(successfulCallbacks, "result4Args").and.callThrough();
+            const failSpy = spyOn(failingCallbacks, "result4Args").and.callThrough();
+            const success = promisify(successfulCallbacks.result4Args)("arg1", "arg2", "arg3", "arg4");
+            const fail = promisify(failingCallbacks.result4Args)("arg1", "arg2", "arg3", "arg4");
 
             await expectAsync(success).toBeResolvedTo(["arg1", "arg2", "arg3", "arg4"]);
             await expectAsync(fail).toBeRejectedWith(new Error("fail"));
@@ -227,10 +226,10 @@ describe("Global utility: #promisify", () => {
         });
 
         it("(arg1: T1, arg2: T2, arg3: T3, arg4: T4, callback: NodeCallback) => void", async () => {
-            const successSpy = spyOn(successfulCallbacks, "fn10").and.callThrough();
-            const failSpy = spyOn(failingCallbacks, "fn10").and.callThrough();
-            const success = promisify(successfulCallbacks.fn10)("arg1", "arg2", "arg3", "arg4");
-            const fail = promisify(failingCallbacks.fn10)("arg1", "arg2", "arg3", "arg4");
+            const successSpy = spyOn(successfulCallbacks, "void4Args").and.callThrough();
+            const failSpy = spyOn(failingCallbacks, "void4Args").and.callThrough();
+            const success = promisify(successfulCallbacks.void4Args)("arg1", "arg2", "arg3", "arg4");
+            const fail = promisify(failingCallbacks.void4Args)("arg1", "arg2", "arg3", "arg4");
 
             await expectAsync(success).toBeResolved();
             await expectAsync(fail).toBeRejectedWith(new Error("fail"));
@@ -240,10 +239,10 @@ describe("Global utility: #promisify", () => {
         });
 
         it("(arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, callback: NodeResultCallback) => void", async () => {
-            const successSpy = spyOn(successfulCallbacks, "fn11").and.callThrough();
-            const failSpy = spyOn(failingCallbacks, "fn11").and.callThrough();
-            const success = promisify(successfulCallbacks.fn11)("arg1", "arg2", "arg3", "arg4", "arg5");
-            const fail = promisify(failingCallbacks.fn11)("arg1", "arg2", "arg3", "arg4", "arg5");
+            const successSpy = spyOn(successfulCallbacks, "result5Args").and.callThrough();
+            const failSpy = spyOn(failingCallbacks, "result5Args").and.callThrough();
+            const success = promisify(successfulCallbacks.result5Args)("arg1", "arg2", "arg3", "arg4", "arg5");
+            const fail = promisify(failingCallbacks.result5Args)("arg1", "arg2", "arg3", "arg4", "arg5");
 
             await expectAsync(success).toBeResolvedTo(["arg1", "arg2", "arg3", "arg4", "arg5"]);
             await expectAsync(fail).toBeRejectedWith(new Error("fail"));
@@ -253,10 +252,10 @@ describe("Global utility: #promisify", () => {
         });
 
         it("(arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, callback: NodeCallback) => void", async () => {
-            const successSpy = spyOn(successfulCallbacks, "fn12").and.callThrough();
-            const failSpy = spyOn(failingCallbacks, "fn12").and.callThrough();
-            const success = promisify(successfulCallbacks.fn12)("arg1", "arg2", "arg3", "arg4", "arg5");
-            const fail = promisify(failingCallbacks.fn12)("arg1", "arg2", "arg3", "arg4", "arg5");
+            const successSpy = spyOn(successfulCallbacks, "void5Args").and.callThrough();
+            const failSpy = spyOn(failingCallbacks, "void5Args").and.callThrough();
+            const success = promisify(successfulCallbacks.void5Args)("arg1", "arg2", "arg3", "arg4", "arg5");
+            const fail = promisify(failingCallbacks.void5Args)("arg1", "arg2", "arg3", "arg4", "arg5");
 
             await expectAsync(success).toBeResolved();
             await expectAsync(fail).toBeRejectedWith(new Error("fail"));
