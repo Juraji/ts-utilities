@@ -1,13 +1,20 @@
 /**
  * promisify is a Node utility function to convert Continuation-passing style functions
- * to Promise functions, in order to make them support async/await.
+ * to Promise functions in order to make them support async/await.
+ *
+ * Synopsis:
+ *      class MyClass {}
+ *          public myFunction(arg1: string, callback: (err: Error | null, result: string) => void): void {...}
+ *      }
+ *
+ *      const obj = new MyClass();
+ *      const myFunctionP: Promise<string> = promisify(obj.myFunction)(arg1);
  */
 
-export type NodeCallback = (err?: Error | null) => void;
-export type NodeResultCallback<R> = (err: Error | null, result: R) => void;
+type NodeCallback = (err?: any) => void;
+type NodeResultCallback<R> = (err: any, result: R) => void;
 
 // Promisify overloads
-// tslint:disable-next-line:ban-types
 export function promisify<R>(
     fn: (callback: NodeResultCallback<R>) => void)
     : () => Promise<R>;
@@ -53,16 +60,13 @@ export function promisify<T1, T2, T3, T4, T5>(
 // tslint:disable-next-line:ban-types
 export function promisify(original: Function): () => Promise<any> {
     if (typeof original !== "function") {
-        throw new Error(`[Promisify] Invalid argument origin. Expected "Function" got "${typeof original}".`);
+        throw new Error(`[Promisify] invalid argument for origin, expected "Function" got "${typeof original}"`);
     }
 
     function fn(...args) {
-        return new Promise((resolve, reject) => original.call(this, ...args, (err, result) => {
-            if (err) {
-                return reject(err);
-            }
-            resolve(result);
-        }));
+        return new Promise((resolve, reject) =>
+            original.call(this, ...args, (err, result) =>
+                err ? reject(err) : resolve(result)));
     }
 
     Object.setPrototypeOf(fn, Object.getPrototypeOf(original));
