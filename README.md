@@ -6,11 +6,13 @@ A personal library "ts-utilities", with a few utilities I often use in TypeScrip
 # Glossary
 ### Global function #promisify 
 
- promisify is a Node utility function to convert Continuation-passing style functions
- to Promise functions in order to make them support async/await.
+promisify is a Node utility function to convert Continuation-passing style functions
+to Promise functions in order to make them support async/await.
  
- Synopsis:  
- ```typescript
+> The TypeScript overloads are defined for up to 5 arguments to the supplied method.
+ 
+Synopsis:  
+```typescript
 import promisify from "./projects/ts-utilities/src/lib/promisify";
 
 class MyClass {
@@ -30,12 +32,14 @@ const myFunctionP: Promise<string> = promisify(obj.myFunction)("arg1");
 myFunctionP
     .then(result => console.log(result))
     .catch(err => console.error(err));
- ```
+```
 
 ### Global function #promisifyResolve
 
  promisifyResolve is an extension on the promisify utility in Node.
  It converts resolve-reject-style functions to Promise functions in order to make them support async/await.
+ 
+ > The TypeScript overloads are defined for up to 5 arguments to the supplied method.
  
  Synopsis:
  ```typescript
