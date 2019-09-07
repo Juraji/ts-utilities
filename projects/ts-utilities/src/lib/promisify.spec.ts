@@ -1,5 +1,5 @@
 /* tslint:disable:max-line-length */
-import { promisify } from "./promisify";
+import promisify from "./promisify";
 
 describe("Global utility: #promisify", () => {
     const successfulCallbacks = new (class SuccessfulCallbacksClass {
