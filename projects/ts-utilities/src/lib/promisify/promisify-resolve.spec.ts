@@ -1,7 +1,7 @@
 /* tslint:disable:max-line-length */
 import promisifyResolve from "./promisify-resolve";
 
-describe("Global utility: #promisifyResolve", () => {
+describe("Global utility: #promisifyResolve()", () => {
     // noinspection JSUnusedLocalSymbols
     const successfulResolves = {
         no_result_no_args: (resolve: () => void, reject: (err?: any) => void) => resolve(),

@@ -54,7 +54,7 @@ describe("Global constant LOGGER: SimpleLogger", () => {
         expect(errorOutSpy).toHaveBeenCalledWith("[TEST] Something happened");
     });
 
-    describe("should uphold log level set via #configure", () => {
+    describe("should uphold log level set via #configure()", () => {
         const callLogger = () => {
             LOGGER.debug("Debug log");
             LOGGER.info("Info log");

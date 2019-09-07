@@ -18,25 +18,25 @@ describe("LogOutput", () => {
             consoleWarnSpy = spyOn(console, "warn").and.stub();
         });
 
-        it("should call console.debug when calling #debug", () => {
+        it("should call console.debug when calling #debug()", () => {
             output.debug("Test message");
 
             expect(consoleDebugSpy).toHaveBeenCalledWith("Test message");
         });
 
-        it("should call console.error when calling #error", () => {
+        it("should call console.error when calling #error()", () => {
             output.error("Test message");
 
             expect(consoleErrorSpy).toHaveBeenCalledWith("Test message");
         });
 
-        it("should call console.info when calling #info", () => {
+        it("should call console.info when calling #info()", () => {
             output.info("Test message");
 
             expect(consoleInfoSpy).toHaveBeenCalledWith("Test message");
         });
 
-        it("should call console.warn when calling #warn", () => {
+        it("should call console.warn when calling #warn()", () => {
             output.warn("Test message");
 
             expect(consoleWarnSpy).toHaveBeenCalledWith("Test message");

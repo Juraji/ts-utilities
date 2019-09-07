@@ -1,7 +1,7 @@
 /* tslint:disable:max-line-length */
 import promisify from "./promisify";
 
-describe("Global utility: #promisify", () => {
+describe("Global utility: #promisify()", () => {
     const successfulCallbacks = {
         no_result_no_args: (callback: (err?: any) => void) => callback(),
         no_result_1_arg: (arg1: string, callback: (err?: any) => void) => callback(),
