@@ -12,7 +12,7 @@
  */
 
 type NodeCallback = (err?: any) => void;
-type NodeResultCallback<R> = (err: any, result: R) => void;
+type NodeResultCallback<R> = (err: any, result?: R) => void;
 
 // Promisify overloads
 export default function promisify<R>(
