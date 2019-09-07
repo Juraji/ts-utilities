@@ -33,7 +33,7 @@ describe("Global utility: #promisify", () => {
     };
 
     describe("should support the following inputs", () => {
-        it("No result n _args", async () => {
+        it("No result no args", async () => {
             const successSpy = spyOn(successfulCallbacks, "no_result_no_args").and.callThrough();
             const failSpy = spyOn(failingCallbacks, "no_result_no_args").and.callThrough();
             const success = promisify(successfulCallbacks.no_result_no_args)();
@@ -116,7 +116,7 @@ describe("Global utility: #promisify", () => {
             expect(failSpy).toHaveBeenCalledWith("arg1", "arg2", "arg3", "arg4", "arg5", jasmine.any(Function));
         });
 
-        it("With result n _args", async () => {
+        it("With result no args", async () => {
             const successSpy = spyOn(successfulCallbacks, "with_result_no_args").and.callThrough();
             const failSpy = spyOn(failingCallbacks, "with_result_no_args").and.callThrough();
             const success = promisify(successfulCallbacks.with_result_no_args)();

@@ -2,4 +2,5 @@
  * Public API Surface of ts-utilities
  */
 
-export * from "./lib/promisify";
+export * from "./lib/promisify/index";
+export * from "./lib/simple-logger/index";
