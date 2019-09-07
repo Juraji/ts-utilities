@@ -33,6 +33,13 @@ describe("Global utility: #promisifyResolve()", () => {
         with_result_5_args: (arg1: string, arg2: string, arg3: string, arg4: string, arg5: string, resolve: (r: string[]) => void, reject: (err?: any) => void) => reject(new Error("fail"))
     };
 
+    it("should fail when the given method is not a Function", () => {
+        // Break type-checking and try to supply a plain object
+        const variable = {} as (resolve: (r: string[]) => void, reject: (err?: any) => void) => void;
+
+        expect(() => promisifyResolve(variable)).toThrow(new Error("[Promisify] invalid argument for origin, expected \"Function\" got \"object\""));
+    });
+
     describe("should support the following inputs", () => {
         it("No result no args", async () => {
             const successSpy = spyOn(successfulResolves, "no_result_no_args").and.callThrough();

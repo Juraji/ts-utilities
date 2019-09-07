@@ -32,6 +32,13 @@ describe("Global utility: #promisify()", () => {
         with_result_5_args: (arg1: string, arg2: string, arg3: string, arg4: string, arg5, callback: (err: any, r?: string[]) => void) => callback(new Error("fail"))
     };
 
+    it("should fail when the given method is not a Function", () => {
+        // Break type-checking and try to supply a number
+        const variable = 1 as any as (callback: (err: any, r?: string[]) => void) => void;
+
+        expect(() => promisify(variable)).toThrow(new Error("[Promisify] invalid argument for origin, expected \"Function\" got \"number\""));
+    });
+
     describe("should support the following inputs", () => {
         it("No result no args", async () => {
             const successSpy = spyOn(successfulCallbacks, "no_result_no_args").and.callThrough();

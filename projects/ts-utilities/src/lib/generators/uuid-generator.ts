@@ -43,7 +43,7 @@ export default class UUID {
             + this.lookup[d3 >> 8 & 0xff] + this.lookup[d3 >> 16 & 0xff] + this.lookup[d3 >> 24 & 0xff];
     }
 
-    private generator(max: number = Infinity): IterableIterator<string> {
+    private generator(max: number): IterableIterator<string> {
         if (max <= 0) {
             throw new Error(`UUID generator maximum is set to a negative value (${max}).`);
         }

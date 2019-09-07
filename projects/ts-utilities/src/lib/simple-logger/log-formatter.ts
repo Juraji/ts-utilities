@@ -12,17 +12,13 @@ export default interface LogFormatter {
 export class CurlyBracketsFormatter implements LogFormatter {
     public format(template: string, ...args): string {
         if (template) {
-            if (args) {
-                let out = template;
+            let out = template;
 
-                for (const arg of args) {
-                    out = out.replace("{}", arg);
-                }
-
-                return out;
-            } else {
-                return template;
+            for (const arg of args) {
+                out = out.replace("{}", arg);
             }
+
+            return out;
         }
     }
 }
@@ -37,17 +33,13 @@ export class CurlyBracketsFormatter implements LogFormatter {
 export class NumberedCurlyBracesFormatter implements LogFormatter {
     public format(template: string, ...args: any[]): string {
         if (template) {
-            if (args) {
-                let out = template;
+            let out = template;
 
-                for (let i = 0; i < args.length; i++) {
-                    out = out.replace(new RegExp("\\{" + i + "\\}", "g"), args[i]);
-                }
-
-                return out;
-            } else {
-                return template;
+            for (let i = 0; i < args.length; i++) {
+                out = out.replace(new RegExp("\\{" + i + "\\}", "g"), args[i]);
             }
+
+            return out;
         }
     }
 }

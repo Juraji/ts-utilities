@@ -14,6 +14,16 @@ describe("LogFormatter", () => {
 
             expect(formatted).toEqual("My log template with replacements like 123.");
         });
+
+        it("should ignore undefined or null input", () => {
+            const formatted = formatter.format(null);
+            expect(formatted).toBeUndefined();
+        });
+
+        it("should allow for no arguments to be passed", () => {
+            const formatted = formatter.format("My log");
+            expect(formatted).toBe("My log");
+        });
     });
 
     describe("NumberedCurlyBracesFormatter", () => {
@@ -29,6 +39,16 @@ describe("LogFormatter", () => {
                 "replacements", 123, "log");
 
             expect(formatted).toEqual("My log template with replacements like 123, even multiple times look: 123-log-123.");
+        });
+
+        it("should ignore undefined or null input", () => {
+            const formatted = formatter.format(null);
+            expect(formatted).toBeUndefined();
+        });
+
+        it("should allow for no arguments to be passed", () => {
+            const formatted = formatter.format("My log");
+            expect(formatted).toBe("My log");
         });
     });
 });
