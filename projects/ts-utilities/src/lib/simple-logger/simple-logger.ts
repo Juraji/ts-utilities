@@ -4,8 +4,23 @@ import SimpleLoggerConfig from "./simple-logger-config";
 export default class SimpleLogger {
     private readonly config: SimpleLoggerConfig;
 
+    /**
+     * Get current logging level
+     */
+    public get level(): Level {
+        return this.config.level;
+    }
+
     constructor(defaultConfig: SimpleLoggerConfig) {
         this.config = Object.create(defaultConfig);
+    }
+
+    /**
+     * Set target logging level
+     * @param level The new loggin level
+     */
+    public setLevel(level: Level) {
+        this.configure({level});
     }
 
     /**

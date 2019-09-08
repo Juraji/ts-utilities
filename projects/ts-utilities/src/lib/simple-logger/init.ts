@@ -4,15 +4,27 @@ import { CurlyBracketsFormatter } from "./log-formatter";
 import SimpleLoggerConfig from "./simple-logger-config";
 import SimpleLogger from "./simple-logger";
 
-const LOGGER_DEFAULTS: SimpleLoggerConfig = {
+let _LOGGER_HOLDER: SimpleLogger;
+const _DEFAULTS: Readonly<SimpleLoggerConfig> = {
     level: Level.INFO,
     out: new BrowserConsoleLogOutput(),
     formatter: new CurlyBracketsFormatter()
 };
 
-const LOGGER = new SimpleLogger(LOGGER_DEFAULTS);
-export default LOGGER;
+/**
+ * Create or get the current logger
+ */
+export default function LOGGER(): Readonly<SimpleLogger> {
+    if (!_LOGGER_HOLDER) {
+        _LOGGER_HOLDER = new SimpleLogger(_DEFAULTS);
+    }
 
+    return _LOGGER_HOLDER;
+}
+
+/**
+ * Reset the global Simplelogger to defaults
+ */
 export function reconfigureSimpleLogger() {
-    LOGGER.configure(LOGGER_DEFAULTS);
+    LOGGER().configure(_DEFAULTS);
 }

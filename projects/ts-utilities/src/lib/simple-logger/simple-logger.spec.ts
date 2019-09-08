@@ -20,7 +20,7 @@ describe("Global constant LOGGER: SimpleLogger", () => {
         infoOutSpy = createSpy("infoOutSpy");
         warnOutSpy = createSpy("warnOutSpy");
 
-        LOGGER.configure({
+        LOGGER().configure({
             out: {
                 debug: debugOutSpy,
                 info: infoOutSpy,
@@ -31,12 +31,17 @@ describe("Global constant LOGGER: SimpleLogger", () => {
     });
 
     it("should be globally defined", () => {
-        expect(LOGGER).toBeDefined("LOGGER global is undefined");
-        expect(LOGGER.constructor.name).toEqual("SimpleLogger");
+        const logger = LOGGER();
+
+        expect(logger).toBeDefined("LOGGER global is undefined");
+        expect(logger.constructor.name).toEqual("SimpleLogger");
+
+        // Expect defaults
+        expect(logger.level).toBe(Level.INFO);
     });
 
     it("should format messages", () => {
-        LOGGER.info("My log with {} like {}.", "replacements", 123);
+        LOGGER().info("My log with {} like {}.", "replacements", 123);
 
         expect(infoOutSpy).toHaveBeenCalledWith("My log with replacements like 123.");
     });
@@ -48,22 +53,23 @@ describe("Global constant LOGGER: SimpleLogger", () => {
             }
         }
 
-        LOGGER.configure({formatter: new MyFormatter()});
-        LOGGER.error("{} happened", "TEST", "Something");
+        LOGGER().configure({formatter: new MyFormatter()});
+        LOGGER().error("{} happened", "TEST", "Something");
 
         expect(errorOutSpy).toHaveBeenCalledWith("[TEST] Something happened");
     });
 
     describe("should uphold log level set via #configure()", () => {
         const callLogger = () => {
-            LOGGER.debug("Debug log");
-            LOGGER.info("Info log");
-            LOGGER.warn("Warn log");
-            LOGGER.error("Error log");
+            LOGGER().debug("Debug log");
+            LOGGER().info("Info log");
+            LOGGER().warn("Warn log");
+            LOGGER().error("Error log");
         };
 
         it("at level DEBUG", () => {
-            LOGGER.configure({level: Level.DEBUG});
+            LOGGER().setLevel(Level.DEBUG);
+            expect(LOGGER().level).toBe(Level.DEBUG);
 
             callLogger();
 
@@ -74,7 +80,8 @@ describe("Global constant LOGGER: SimpleLogger", () => {
         });
 
         it("at level INFO", () => {
-            LOGGER.configure({level: Level.INFO});
+            LOGGER().setLevel(Level.INFO);
+            expect(LOGGER().level).toBe(Level.INFO);
 
             callLogger();
 
@@ -85,7 +92,8 @@ describe("Global constant LOGGER: SimpleLogger", () => {
         });
 
         it("at level WARN", () => {
-            LOGGER.configure({level: Level.WARN});
+            LOGGER().setLevel(Level.WARN);
+            expect(LOGGER().level).toBe(Level.WARN);
 
             callLogger();
 
@@ -96,7 +104,8 @@ describe("Global constant LOGGER: SimpleLogger", () => {
         });
 
         it("at level ERROR", () => {
-            LOGGER.configure({level: Level.ERROR});
+            LOGGER().setLevel(Level.ERROR);
+            expect(LOGGER().level).toBe(Level.ERROR);
 
             callLogger();
 
@@ -107,7 +116,8 @@ describe("Global constant LOGGER: SimpleLogger", () => {
         });
 
         it("at level OFF", () => {
-            LOGGER.configure({level: Level.OFF});
+            LOGGER().setLevel(Level.OFF);
+            expect(LOGGER().level).toBe(Level.OFF);
 
             callLogger();
 

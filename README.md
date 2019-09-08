@@ -125,28 +125,28 @@ A configurable logger defined in the global scope as `LOGGER`.
 See the synopsis below on how to configure the logger.
 
 Synopsis:  
-`LOGGER.configure(config: SimpleLoggerConfig);`  
-`LOGGER.debug("Some {}", "message", ...);`  
-`LOGGER.info("Some {}", "message", ...);`  
-`LOGGER.warn("Some {}", "message", ...);`  
-`LOGGER.error("Some {}", "message", ...);`
+`LOGGER().configure(config: SimpleLoggerConfig);`  
+`LOGGER().debug("Some {}", "message", ...);`  
+`LOGGER().info("Some {}", "message", ...);`  
+`LOGGER().warn("Some {}", "message", ...);`  
+`LOGGER().error("Some {}", "message", ...);`
 
 ```typescript
 import LOGGER, { Level } from "./projects/ts-utilities/src/lib/simple-logger";
 import { BrowserConsoleLogOutput } from "./projects/ts-utilities/src/lib/simple-logger/log-output";
 import { CurlyBracketsFormatter } from "./projects/ts-utilities/src/lib/simple-logger/log-formatter";
 
-LOGGER.info("My {} message.", "info"); // Log: My info message
+LOGGER().info("My {} message.", "info"); // Log: My info message
 
 // #configure may be called optionally, this call shows the default values
-LOGGER.configure({
+LOGGER().configure({
     level: Level.INFO,
     out: new BrowserConsoleLogOutput(),
     formatter: new CurlyBracketsFormatter()
 });
 
-LOGGER.debug("{} My {} message.", 1, "debug"); // Nothing happens
-LOGGER.info("{} My {} message.", 2, "info"); // Log: 2 My info message
-LOGGER.warn("{} My {} message.", 3, "warn"); // Warn: 3 My warn message
-LOGGER.error("{} My {} message.", 4, "error"); // Error: 4 My error message
+LOGGER().debug("{} My {} message.", 1, "debug"); // Nothing happens
+LOGGER().info("{} My {} message.", 2, "info"); // Log: 2 My info message
+LOGGER().warn("{} My {} message.", 3, "warn"); // Warn: 3 My warn message
+LOGGER().error("{} My {} message.", 4, "error"); // Error: 4 My error message
 ```
