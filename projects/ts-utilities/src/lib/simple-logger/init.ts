@@ -23,7 +23,7 @@ export default function LOGGER(): Readonly<SimpleLogger> {
 }
 
 /**
- * Reset the global Simplelogger to defaults
+ * Reset the global SimpleLogger to defaults
  */
 export function reconfigureSimpleLogger() {
     LOGGER().configure(_DEFAULTS);
