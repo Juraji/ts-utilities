@@ -40,7 +40,7 @@ export default function promisify<T1, T2, T3, T4, T5>(
     : (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => Promise<void>;
 
 /**
- *  promisify is a Node utility function to convert Continuation-passing style functions
+ * promisify is a Node utility function to convert Continuation-passing style functions.
  * to Promise functions in order to make them support async/await.
  *
  * <pre>
@@ -53,8 +53,8 @@ export default function promisify<T1, T2, T3, T4, T5>(
  *      const myFunctionP: Promise<string> = promisify(obj.myFunction)(123);
  * </pre>
  *
- * @param original Continuation-style function
- * @return A function, with the same interface, resulting in a Promise
+ * @param original Continuation-style function.
+ * @return A function, with the same interface, resulting in a Promise.
  */
 // tslint:disable-next-line:ban-types
 export default function promisify(original: Function): () => Promise<any> {

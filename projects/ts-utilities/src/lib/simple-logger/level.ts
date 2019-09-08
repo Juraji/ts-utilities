@@ -1,3 +1,7 @@
+/**
+ * Logging level presets.
+ * Each level will have all lower levels enabled as well.
+ */
 export enum Level {
     OFF = 0,
     ERROR = 1,

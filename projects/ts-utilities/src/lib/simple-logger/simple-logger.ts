@@ -5,7 +5,7 @@ export default class SimpleLogger {
     private readonly config: SimpleLoggerConfig;
 
     /**
-     * Get current logging level
+     * Get current logging level.
      */
     public get level(): Level {
         return this.config.level;
@@ -16,8 +16,8 @@ export default class SimpleLogger {
     }
 
     /**
-     * Set target logging level
-     * @param level The new loggin level
+     * Set target logging level.
+     * @param level The new logging level.
      */
     public setLevel(level: Level) {
         this.configure({level});
@@ -27,34 +27,34 @@ export default class SimpleLogger {
      * Reconfigure this logger.
      * Note that only the properties, present in the config parameter are set.
      * Properties not present in the config are kept in their current state.
-     * @param config A replacement config
+     * @param config New configuration options to apply
      */
-    public configure(config: SimpleLoggerConfig) {
+    public configure(config: Partial<SimpleLoggerConfig>) {
         Object.assign(this.config, config);
     }
 
     /**
-     * Log at level DEBUG
-     * @param tpl A log message
-     * @param args Optional replacement parameters
+     * Log at level DEBUG.
+     * @param tpl A log message.
+     * @param args Optional replacement parameters.
      */
     public debug(tpl: string, ...args: any[]): void {
         this.doLog(Level.DEBUG, this.config.out.debug, tpl, args);
     }
 
     /**
-     * Log at level ERROR
-     * @param tpl A log message
-     * @param args Optional replacement parameters
+     * Log at level ERROR.
+     * @param tpl A log message.
+     * @param args Optional replacement parameters.
      */
     public error(tpl: string, ...args: any[]): void {
         this.doLog(Level.ERROR, this.config.out.error, tpl, args);
     }
 
     /**
-     * Log at level INFO
-     * @param tpl A log message
-     * @param args Optional replacement parameters
+     * Log at level INFO.
+     * @param tpl A log message.
+     * @param args Optional replacement parameters.
      */
     public info(tpl: string, ...args: any[]): void {
         this.doLog(Level.INFO, this.config.out.info, tpl, args);
@@ -62,9 +62,9 @@ export default class SimpleLogger {
 
 
     /**
-     * Log at level WARN
-     * @param tpl A log message
-     * @param args Optional replacement parameters
+     * Log at level WARN.
+     * @param tpl A log message.
+     * @param args Optional replacement parameters.
      */
     public warn(tpl: string, ...args: any[]): void {
         this.doLog(Level.WARN, this.config.out.warn, tpl, args);

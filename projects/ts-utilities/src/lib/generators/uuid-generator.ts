@@ -1,7 +1,7 @@
 /* tslint:disable:no-bitwise */
 export default class UUID {
     // Random value lookup-table
-    private readonly lookup;
+    private readonly lookup: string[];
 
     private constructor() {
         this.lookup = [];
@@ -18,7 +18,7 @@ export default class UUID {
     }
 
     /**
-     * Returns an iterator of random uuids
+     * Returns an iterator of random UUIDs
      * @param max The maximum number of UUIDs to produce before completing the iterable
      */
     public static generator(max: number = Infinity): IterableIterator<string> {

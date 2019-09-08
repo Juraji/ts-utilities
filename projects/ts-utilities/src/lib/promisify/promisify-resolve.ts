@@ -36,8 +36,8 @@ export default function promisifyResolve<T1, T2, T3, T4, T5, R>(
  *      const myFunctionP: Promise<string> = promisifyResolve(obj.myFunction)(arg1);
  * </code>
  *
- * @param original resolve-reject-style function
- * @return A function, with the same interface, resulting in a Promise
+ * @param original resolve-reject-style function.
+ * @return A function, with the same interface, resulting in a Promise.
  */
 // tslint:disable-next-line:ban-types
 export default function promisifyResolve(original: Function): () => Promise<any> {
