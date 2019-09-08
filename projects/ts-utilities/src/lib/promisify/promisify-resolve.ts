@@ -1,16 +1,3 @@
-/**
- * promisifyResolve is an extension on the promisify utility in Node.
- * It converts resolve-reject-style functions to Promise functions in order to make them support async/await.
- *
- * Synopsis:
- *      class MyClass {
- *          public myFunction(arg: string, resolve: (result: string) => void, reject: (err?: any) => void): void {...}
- *      }
- *
- *      const obj = new MyClass();
- *      const myFunctionP: Promise<string> = promisifyResolve(obj.myFunction)(arg1);
- */
-
 type NodeResolve<T> = (result?: T) => void;
 type NodeReject = (err?: any) => void;
 
@@ -35,9 +22,22 @@ export default function promisifyResolve<T1, T2, T3, T4, T5, R>(
     : (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => Promise<R>;
 
 /**
- * PromisifyResolve implementation
- * This method will not be visible by code completion.
- * The interfaces above will assert proper typing for up to 5 arguments.
+ * promisifyResolve is an extension on the promisify utility in Node.
+ * It converts resolve-reject-style functions to Promise functions in order to make them support async/await.
+ *
+ * <code>
+ *     class MyClass {
+ *          public myFunction(arg: string,
+ *                            resolve: (result: string) => void,
+ *                            reject: (err?: any) => void): void {...}
+ *      }
+ *
+ *      const obj = new MyClass();
+ *      const myFunctionP: Promise<string> = promisifyResolve(obj.myFunction)(arg1);
+ * </code>
+ *
+ * @param original resolve-reject-style function
+ * @return A function, with the same interface, resulting in a Promise
  */
 // tslint:disable-next-line:ban-types
 export default function promisifyResolve(original: Function): () => Promise<any> {

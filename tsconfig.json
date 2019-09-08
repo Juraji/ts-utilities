@@ -30,5 +30,20 @@
     "angularCompilerOptions": {
         "fullTemplateTypeCheck": true,
         "strictInjectionParameters": true
+    },
+    "typedocOptions": {
+        "mode": "modules",
+        "out": "docs",
+        "name": "TS Utilities",
+        "theme": "default",
+        "ignoreCompilerErrors": true,
+        "excludePrivate": false,
+        "excludeNotExported": false,
+        "exclude": "**/*+(public-api|index|test|.spec).ts",
+        "target": "ES5",
+        "moduleResolution": "node",
+        "preserveConstEnums": true,
+        "stripInternal": true,
+        "module": "commonjs"
     }
 }

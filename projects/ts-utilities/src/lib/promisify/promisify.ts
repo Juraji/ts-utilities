@@ -1,16 +1,3 @@
-/**
- * promisify is a Node utility function to convert Continuation-passing style functions
- * to Promise functions in order to make them support async/await.
- *
- * Synopsis:
- *      class MyClass {}
- *          public myFunction(arg1: string, callback: (err: Error | null, result: string) => void): void {...}
- *      }
- *
- *      const obj = new MyClass();
- *      const myFunctionP: Promise<string> = promisify(obj.myFunction)(arg1);
- */
-
 type NodeCallback = (err?: any) => void;
 type NodeResultCallback<R> = (err: any, result?: R) => void;
 
@@ -53,9 +40,21 @@ export default function promisify<T1, T2, T3, T4, T5>(
     : (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => Promise<void>;
 
 /**
- * Promisify implementation
- * This method will not be visible by code completion.
- * The interfaces above will assert proper typing for up to 5 arguments.
+ *  promisify is a Node utility function to convert Continuation-passing style functions
+ * to Promise functions in order to make them support async/await.
+ *
+ * <pre>
+ *     class MyClass {}
+ *          public myFunction(arg1: number,
+ *                            callback: (err: any, result: string) => void) {...}
+ *      }
+ *
+ *      const obj = new MyClass();
+ *      const myFunctionP: Promise<string> = promisify(obj.myFunction)(123);
+ * </pre>
+ *
+ * @param original Continuation-style function
+ * @return A function, with the same interface, resulting in a Promise
  */
 // tslint:disable-next-line:ban-types
 export default function promisify(original: Function): () => Promise<any> {
