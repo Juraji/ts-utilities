@@ -2,36 +2,6 @@
 import promisifyResolve from "./promisify-resolve";
 
 describe("Global utility: #promisifyResolve()", () => {
-    // noinspection JSUnusedLocalSymbols
-    const successfulResolves = {
-        no_result_no_args: (resolve: () => void, reject: (err?: any) => void) => resolve(),
-        no_result_1_arg: (arg1: string, resolve: () => void, reject: (err?: any) => void) => resolve(),
-        no_result_2_args: (arg1: string, arg2: string, resolve: () => void, reject: (err?: any) => void) => resolve(),
-        no_result_3_args: (arg1: string, arg2: string, arg3: string, resolve: () => void, reject: (err?: any) => void) => resolve(),
-        no_result_4_args: (arg1: string, arg2: string, arg3: string, arg4: string, resolve: () => void, reject: (err?: any) => void) => resolve(),
-        no_result_5_args: (arg1: string, arg2: string, arg3: string, arg4: string, arg5: string, resolve: () => void, reject: (err?: any) => void) => resolve(),
-        with_result_no_args: (resolve: (r: string) => void, reject: (err?: any) => void) => resolve("success"),
-        with_result_1_arg: (arg1: string, resolve: (r: string) => void, reject: (err?: any) => void) => resolve(arg1),
-        with_result_2_args: (arg1: string, arg2: string, resolve: (r: string[]) => void, reject: (err?: any) => void) => resolve([arg1, arg2]),
-        with_result_3_args: (arg1: string, arg2: string, arg3: string, resolve: (r: string[]) => void, reject: (err?: any) => void) => resolve([arg1, arg2, arg3]),
-        with_result_4_args: (arg1: string, arg2: string, arg3: string, arg4: string, resolve: (r: string[]) => void, reject: (err?: any) => void) => resolve([arg1, arg2, arg3, arg4]),
-        with_result_5_args: (arg1: string, arg2: string, arg3: string, arg4: string, arg5: string, resolve: (r: string[]) => void, reject: (err?: any) => void) => resolve([arg1, arg2, arg3, arg4, arg5])
-    };
-
-    const failedResolves = {
-        no_result_no_args: (resolve: () => void, reject: (err?: any) => void) => reject(new Error("fail")),
-        no_result_1_arg: (arg1: string, resolve: () => void, reject: (err?: any) => void) => reject(new Error("fail")),
-        no_result_2_args: (arg1: string, arg2: string, resolve: () => void, reject: (err?: any) => void) => reject(new Error("fail")),
-        no_result_3_args: (arg1: string, arg2: string, arg3: string, resolve: () => void, reject: (err?: any) => void) => reject(new Error("fail")),
-        no_result_4_args: (arg1: string, arg2: string, arg3: string, arg4: string, resolve: () => void, reject: (err?: any) => void) => reject(new Error("fail")),
-        no_result_5_args: (arg1: string, arg2: string, arg3: string, arg4: string, arg5: string, resolve: () => void, reject: (err?: any) => void) => reject(new Error("fail")),
-        with_result_no_args: (resolve: (r: string) => void, reject: (err?: any) => void) => reject(new Error("fail")),
-        with_result_1_arg: (arg1: string, resolve: (r: string) => void, reject: (err?: any) => void) => reject(new Error("fail")),
-        with_result_2_args: (arg1: string, arg2: string, resolve: (r: string[]) => void, reject: (err?: any) => void) => reject(new Error("fail")),
-        with_result_3_args: (arg1: string, arg2: string, arg3: string, resolve: (r: string[]) => void, reject: (err?: any) => void) => reject(new Error("fail")),
-        with_result_4_args: (arg1: string, arg2: string, arg3: string, arg4: string, resolve: (r: string[]) => void, reject: (err?: any) => void) => reject(new Error("fail")),
-        with_result_5_args: (arg1: string, arg2: string, arg3: string, arg4: string, arg5: string, resolve: (r: string[]) => void, reject: (err?: any) => void) => reject(new Error("fail"))
-    };
 
     it("should fail when the given method is not a Function", () => {
         // Break type-checking and try to supply a plain object
@@ -40,7 +10,61 @@ describe("Global utility: #promisifyResolve()", () => {
         expect(() => promisifyResolve(variable)).toThrow(new Error("[Promisify] invalid argument for origin, expected \"Function\" got \"object\""));
     });
 
+    it("should support this-context", async () => {
+        class Obj {
+            public fn(resolve: () => void) {
+                this.sameObjCheck();
+                resolve();
+            }
+
+            private sameObjCheck() {
+                // Do nothing
+            }
+        }
+
+        const obj = new Obj();
+
+        const withContext = promisifyResolve(obj.fn, obj)();
+        const withIndirectContext = promisifyResolve((resolve) => obj.fn(resolve))();
+        const withoutContext = promisifyResolve(obj.fn)();
+
+        await expectAsync(withContext).toBeResolved("Promise with context should resolve");
+        await expectAsync(withIndirectContext).toBeResolved("Promise with indirect context should resolve");
+        await expectAsync(withoutContext).toBeRejected("Promise without context should reject");
+    });
+
     describe("should support the following inputs", () => {
+        // noinspection JSUnusedLocalSymbols
+        const successfulResolves = {
+            no_result_no_args: (resolve: () => void, reject: (err?: any) => void) => resolve(),
+            no_result_1_arg: (arg1: string, resolve: () => void, reject: (err?: any) => void) => resolve(),
+            no_result_2_args: (arg1: string, arg2: string, resolve: () => void, reject: (err?: any) => void) => resolve(),
+            no_result_3_args: (arg1: string, arg2: string, arg3: string, resolve: () => void, reject: (err?: any) => void) => resolve(),
+            no_result_4_args: (arg1: string, arg2: string, arg3: string, arg4: string, resolve: () => void, reject: (err?: any) => void) => resolve(),
+            no_result_5_args: (arg1: string, arg2: string, arg3: string, arg4: string, arg5: string, resolve: () => void, reject: (err?: any) => void) => resolve(),
+            with_result_no_args: (resolve: (r: string) => void, reject: (err?: any) => void) => resolve("success"),
+            with_result_1_arg: (arg1: string, resolve: (r: string) => void, reject: (err?: any) => void) => resolve(arg1),
+            with_result_2_args: (arg1: string, arg2: string, resolve: (r: string[]) => void, reject: (err?: any) => void) => resolve([arg1, arg2]),
+            with_result_3_args: (arg1: string, arg2: string, arg3: string, resolve: (r: string[]) => void, reject: (err?: any) => void) => resolve([arg1, arg2, arg3]),
+            with_result_4_args: (arg1: string, arg2: string, arg3: string, arg4: string, resolve: (r: string[]) => void, reject: (err?: any) => void) => resolve([arg1, arg2, arg3, arg4]),
+            with_result_5_args: (arg1: string, arg2: string, arg3: string, arg4: string, arg5: string, resolve: (r: string[]) => void, reject: (err?: any) => void) => resolve([arg1, arg2, arg3, arg4, arg5])
+        };
+
+        const failedResolves = {
+            no_result_no_args: (resolve: () => void, reject: (err?: any) => void) => reject(new Error("fail")),
+            no_result_1_arg: (arg1: string, resolve: () => void, reject: (err?: any) => void) => reject(new Error("fail")),
+            no_result_2_args: (arg1: string, arg2: string, resolve: () => void, reject: (err?: any) => void) => reject(new Error("fail")),
+            no_result_3_args: (arg1: string, arg2: string, arg3: string, resolve: () => void, reject: (err?: any) => void) => reject(new Error("fail")),
+            no_result_4_args: (arg1: string, arg2: string, arg3: string, arg4: string, resolve: () => void, reject: (err?: any) => void) => reject(new Error("fail")),
+            no_result_5_args: (arg1: string, arg2: string, arg3: string, arg4: string, arg5: string, resolve: () => void, reject: (err?: any) => void) => reject(new Error("fail")),
+            with_result_no_args: (resolve: (r: string) => void, reject: (err?: any) => void) => reject(new Error("fail")),
+            with_result_1_arg: (arg1: string, resolve: (r: string) => void, reject: (err?: any) => void) => reject(new Error("fail")),
+            with_result_2_args: (arg1: string, arg2: string, resolve: (r: string[]) => void, reject: (err?: any) => void) => reject(new Error("fail")),
+            with_result_3_args: (arg1: string, arg2: string, arg3: string, resolve: (r: string[]) => void, reject: (err?: any) => void) => reject(new Error("fail")),
+            with_result_4_args: (arg1: string, arg2: string, arg3: string, arg4: string, resolve: (r: string[]) => void, reject: (err?: any) => void) => reject(new Error("fail")),
+            with_result_5_args: (arg1: string, arg2: string, arg3: string, arg4: string, arg5: string, resolve: (r: string[]) => void, reject: (err?: any) => void) => reject(new Error("fail"))
+        };
+
         it("No result no args", async () => {
             const successSpy = spyOn(successfulResolves, "no_result_no_args").and.callThrough();
             const failSpy = spyOn(failedResolves, "no_result_no_args").and.callThrough();

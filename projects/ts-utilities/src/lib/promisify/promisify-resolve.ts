@@ -3,22 +3,28 @@ type NodeReject = (err?: any) => void;
 
 // promisifyResolve overloads
 export default function promisifyResolve<R>(
-    fn: (resolve: NodeResolve<R>, reject: NodeReject) => void)
+    fn: (resolve: NodeResolve<R>, reject: NodeReject) => void,
+    context?: ThisType<any>)
     : () => Promise<R>;
 export default function promisifyResolve<T1, R>(
-    fn: (arg1: T1, resolve: NodeResolve<R>, reject: NodeReject) => void)
+    fn: (arg1: T1, resolve: NodeResolve<R>, reject: NodeReject) => void,
+    context?: ThisType<any>)
     : (arg1: T1) => Promise<R>;
 export default function promisifyResolve<T1, T2, R>(
-    fn: (arg1: T1, arg2: T2, resolve: NodeResolve<R>, reject: NodeReject) => void)
+    fn: (arg1: T1, arg2: T2, resolve: NodeResolve<R>, reject: NodeReject) => void,
+    context?: ThisType<any>)
     : (arg1: T1, arg2: T2) => Promise<R>;
 export default function promisifyResolve<T1, T2, T3, R>(
-    fn: (arg1: T1, arg2: T2, arg3: T3, resolve: NodeResolve<R>, reject: NodeReject) => void)
+    fn: (arg1: T1, arg2: T2, arg3: T3, resolve: NodeResolve<R>, reject: NodeReject) => void,
+    context?: ThisType<any>)
     : (arg1: T1, arg2: T2, arg3: T3) => Promise<R>;
 export default function promisifyResolve<T1, T2, T3, T4, R>(
-    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, resolve: NodeResolve<R>, reject: NodeReject) => void)
+    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, resolve: NodeResolve<R>, reject: NodeReject) => void,
+    context?: ThisType<any>)
     : (arg1: T1, arg2: T2, arg3: T3, arg4: T4) => Promise<R>;
 export default function promisifyResolve<T1, T2, T3, T4, T5, R>(
-    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, resolve: NodeResolve<R>, reject: NodeReject) => void)
+    fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, resolve: NodeResolve<R>, reject: NodeReject) => void,
+    context?: ThisType<any>)
     : (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => Promise<R>;
 
 /**
@@ -37,17 +43,18 @@ export default function promisifyResolve<T1, T2, T3, T4, T5, R>(
  * </code>
  *
  * @param original resolve-reject-style function.
+ * @param context An optional this-context
  * @return A function, with the same interface, resulting in a Promise.
  */
 // tslint:disable-next-line:ban-types
-export default function promisifyResolve(original: Function): () => Promise<any> {
+export default function promisifyResolve(original: Function, context?: ThisType<any>): () => Promise<any> {
     if (typeof original !== "function") {
         throw new Error(`[Promisify] invalid argument for origin, expected "Function" got "${typeof original}"`);
     }
 
     function fn(...args) {
         return new Promise((resolve, reject) =>
-            original.call(this, ...args, resolve, reject));
+            original.call(context || this, ...args, resolve, reject));
     }
 
     Object.setPrototypeOf(fn, Object.getPrototypeOf(original));
