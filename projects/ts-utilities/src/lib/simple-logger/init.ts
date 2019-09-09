@@ -1,8 +1,8 @@
-import { Level } from "./level";
-import { BrowserConsoleLogOutput } from "./log-output";
-import { CurlyBracketsFormatter } from "./log-formatter";
-import SimpleLoggerConfig from "./simple-logger-config";
-import SimpleLogger from "./simple-logger";
+import { SimpleLogger } from "./simple-logger";
+import SimpleLoggerConfig = SimpleLogger.SimpleLoggerConfig;
+import Level = SimpleLogger.Level;
+import BrowserConsoleLogOutput = SimpleLogger.BrowserConsoleLogOutput;
+import CurlyBracketsFormatter = SimpleLogger.CurlyBracketsFormatter;
 
 let _LOGGER_HOLDER: SimpleLogger;
 const _DEFAULTS: Readonly<SimpleLoggerConfig> = {
@@ -13,8 +13,10 @@ const _DEFAULTS: Readonly<SimpleLoggerConfig> = {
 
 /**
  * Create or get the current logger
+ *
+ * Use LOGGER.reconfigure() to reset the logger to its defaults
  */
-export default function LOGGER(): Readonly<SimpleLogger> {
+function LOGGER() {
     if (!_LOGGER_HOLDER) {
         _LOGGER_HOLDER = new SimpleLogger(_DEFAULTS);
     }
@@ -23,8 +25,12 @@ export default function LOGGER(): Readonly<SimpleLogger> {
 }
 
 /**
- * Reset the global SimpleLogger to defaults
+ * Reset logger to defaults
  */
-export function reconfigureSimpleLogger() {
-    LOGGER().configure(_DEFAULTS);
-}
+LOGGER.reconfigure = () => {
+    if (_LOGGER_HOLDER) {
+        _LOGGER_HOLDER.configure(_DEFAULTS);
+    }
+};
+
+export default LOGGER;
