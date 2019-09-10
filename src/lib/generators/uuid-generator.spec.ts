@@ -1,4 +1,4 @@
-import UUID from "./uuid-generator";
+import { UUID } from "./uuid-generator";
 
 describe("Generator: UUID", () => {
     const uuidRegexp = /[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[a-f0-9]{4}-[a-f0-9]{8}/;

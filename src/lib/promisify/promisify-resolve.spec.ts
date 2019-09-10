@@ -1,5 +1,5 @@
 /* tslint:disable:max-line-length */
-import promisifyResolve from "./promisify-resolve";
+import { promisifyResolve } from "./promisify-resolve";
 
 describe("Global utility: #promisifyResolve()", () => {
 

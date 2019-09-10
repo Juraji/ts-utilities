@@ -2,27 +2,27 @@ type NodeResolve<T> = (result?: T) => void;
 type NodeReject = (err?: any) => void;
 
 // promisifyResolve overloads
-export default function promisifyResolve<R>(
+export function promisifyResolve<R>(
     fn: (resolve: NodeResolve<R>, reject: NodeReject) => void,
     context?: ThisType<any>)
     : () => Promise<R>;
-export default function promisifyResolve<T1, R>(
+export function promisifyResolve<T1, R>(
     fn: (arg1: T1, resolve: NodeResolve<R>, reject: NodeReject) => void,
     context?: ThisType<any>)
     : (arg1: T1) => Promise<R>;
-export default function promisifyResolve<T1, T2, R>(
+export function promisifyResolve<T1, T2, R>(
     fn: (arg1: T1, arg2: T2, resolve: NodeResolve<R>, reject: NodeReject) => void,
     context?: ThisType<any>)
     : (arg1: T1, arg2: T2) => Promise<R>;
-export default function promisifyResolve<T1, T2, T3, R>(
+export function promisifyResolve<T1, T2, T3, R>(
     fn: (arg1: T1, arg2: T2, arg3: T3, resolve: NodeResolve<R>, reject: NodeReject) => void,
     context?: ThisType<any>)
     : (arg1: T1, arg2: T2, arg3: T3) => Promise<R>;
-export default function promisifyResolve<T1, T2, T3, T4, R>(
+export function promisifyResolve<T1, T2, T3, T4, R>(
     fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, resolve: NodeResolve<R>, reject: NodeReject) => void,
     context?: ThisType<any>)
     : (arg1: T1, arg2: T2, arg3: T3, arg4: T4) => Promise<R>;
-export default function promisifyResolve<T1, T2, T3, T4, T5, R>(
+export function promisifyResolve<T1, T2, T3, T4, T5, R>(
     fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, resolve: NodeResolve<R>, reject: NodeReject) => void,
     context?: ThisType<any>)
     : (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => Promise<R>;
@@ -47,7 +47,7 @@ export default function promisifyResolve<T1, T2, T3, T4, T5, R>(
  * @return A function, with the same interface, resulting in a Promise.
  */
 // tslint:disable-next-line:ban-types
-export default function promisifyResolve(original: Function, context?: ThisType<any>): () => Promise<any> {
+export function promisifyResolve(original: Function, context?: ThisType<any>): () => Promise<any> {
     if (typeof original !== "function") {
         throw new Error(`[Promisify] invalid argument for origin, expected "Function" got "${typeof original}"`);
     }

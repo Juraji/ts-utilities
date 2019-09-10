@@ -2,51 +2,51 @@ type NodeCallback = (err?: any) => void;
 type NodeResultCallback<R> = (err: any, result?: R) => void;
 
 // Promisify overloads
-export default function promisify<R>(
+export function promisify<R>(
     fn: (callback: NodeResultCallback<R>) => void,
     context?: ThisType<any>)
     : () => Promise<R>;
-export default function promisify(
+export function promisify(
     fn: (callback: NodeCallback) => void,
     context?: ThisType<any>)
     : () => Promise<void>;
-export default function promisify<T1, R>(
+export function promisify<T1, R>(
     fn: (arg1: T1, callback: NodeResultCallback<R>) => void,
     context?: ThisType<any>)
     : (arg1: T1) => Promise<R>;
-export default function promisify<T1>(
+export function promisify<T1>(
     fn: (arg1: T1, callback: NodeCallback) => void,
     context?: ThisType<any>)
     : (arg1: T1) => Promise<void>;
-export default function promisify<T1, T2, R>(
+export function promisify<T1, T2, R>(
     fn: (arg1: T1, arg2: T2, callback: NodeResultCallback<R>) => void,
     context?: ThisType<any>)
     : (arg1: T1, arg2: T2) => Promise<R>;
-export default function promisify<T1, T2>(
+export function promisify<T1, T2>(
     fn: (arg1: T1, arg2: T2, callback: NodeCallback) => void,
     context?: ThisType<any>)
     : (arg1: T1, arg2: T2) => Promise<void>;
-export default function promisify<T1, T2, T3, R>(
+export function promisify<T1, T2, T3, R>(
     fn: (arg1: T1, arg2: T2, arg3: T3, callback: NodeResultCallback<R>) => void,
     context?: ThisType<any>)
     : (arg1: T1, arg2: T2, arg3: T3) => Promise<R>;
-export default function promisify<T1, T2, T3>(
+export function promisify<T1, T2, T3>(
     fn: (arg1: T1, arg2: T2, arg3: T3, callback: NodeCallback) => void,
     context?: ThisType<any>)
     : (arg1: T1, arg2: T2, arg3: T3) => Promise<void>;
-export default function promisify<T1, T2, T3, T4, R>(
+export function promisify<T1, T2, T3, T4, R>(
     fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, callback: NodeResultCallback<R>) => void,
     context?: ThisType<any>)
     : (arg1: T1, arg2: T2, arg3: T3, arg4: T4) => Promise<R>;
-export default function promisify<T1, T2, T3, T4>(
+export function promisify<T1, T2, T3, T4>(
     fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, callback: NodeCallback) => void,
     context?: ThisType<any>)
     : (arg1: T1, arg2: T2, arg3: T3, arg4: T4) => Promise<void>;
-export default function promisify<T1, T2, T3, T4, T5, R>(
+export function promisify<T1, T2, T3, T4, T5, R>(
     fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, callback: NodeResultCallback<R>) => void,
     context?: ThisType<any>)
     : (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => Promise<R>;
-export default function promisify<T1, T2, T3, T4, T5>(
+export function promisify<T1, T2, T3, T4, T5>(
     fn: (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5, callback: NodeCallback) => void,
     context?: ThisType<any>)
     : (arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5) => Promise<void>;
@@ -70,7 +70,7 @@ export default function promisify<T1, T2, T3, T4, T5>(
  * @return A function, with the same interface, resulting in a Promise.
  */
 // tslint:disable-next-line:ban-types
-export default function promisify(original: Function, context?: ThisType<any>): () => Promise<any> {
+export function promisify(original: Function, context?: ThisType<any>): () => Promise<any> {
     if (typeof original !== "function") {
         throw new Error(`[Promisify] invalid argument for origin, expected "Function" got "${typeof original}"`);
     }

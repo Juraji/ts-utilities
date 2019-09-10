@@ -4,8 +4,7 @@ import Level = SimpleLogger.Level;
 import CurlyBracketsFormatter = SimpleLogger.CurlyBracketsFormatter;
 import BrowserConsoleLogOutput = SimpleLogger.BrowserConsoleLogOutput;
 import NumberedCurlyBracesFormatter = SimpleLogger.NumberedCurlyBracesFormatter;
-import LOGGER from "./init";
-import { SimpleLogger } from "./simple-logger";
+import { LOGGER, SimpleLogger } from "./simple-logger";
 
 describe("Global constant LOGGER", () => {
 

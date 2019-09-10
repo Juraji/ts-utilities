@@ -35,15 +35,17 @@
         "mode": "modules",
         "out": "docs",
         "name": "TS Utilities",
-        "theme": "default",
+        "theme": "markdown",
         "ignoreCompilerErrors": true,
         "excludePrivate": false,
-        "excludeNotExported": false,
-        "exclude": "**/*+(public-api|index|test|.spec).ts",
-        "target": "ES5",
+        "excludeNotExported": true,
+        "excludeExternals": true,
+        "exclude": "**/*+(public-api|test|.spec).ts",
+        "target": "es2015",
         "moduleResolution": "node",
         "preserveConstEnums": true,
         "stripInternal": true,
-        "module": "commonjs"
+        "module": "commonjs",
+        "readme": "none"
     }
 }

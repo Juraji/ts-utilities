@@ -1,5 +1,5 @@
 /* tslint:disable:max-line-length */
-import promisify from "./promisify";
+import { promisify } from "./promisify";
 
 describe("Global utility: #promisify()", () => {
     it("should fail when the given method is not a Function", () => {

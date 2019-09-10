@@ -1,5 +1,5 @@
 /* tslint:disable:no-bitwise */
-export default class UUID {
+export class UUID {
     // Random value lookup-table
     private readonly lookup: string[];
 
