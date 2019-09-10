@@ -1,14 +1,13 @@
 import createSpy = jasmine.createSpy;
 import Spy = jasmine.Spy;
-import Level = SimpleLogger.Level;
-import CurlyBracketsFormatter = SimpleLogger.CurlyBracketsFormatter;
-import BrowserConsoleLogOutput = SimpleLogger.BrowserConsoleLogOutput;
-import NumberedCurlyBracesFormatter = SimpleLogger.NumberedCurlyBracesFormatter;
-import { LOGGER, SimpleLogger } from "./simple-logger";
+import { LOGGER } from "./init";
+import { Level } from "./level";
+import { CurlyBracketsFormatter, NumberedCurlyBrackesFormatter } from "./log-formatter";
+import { BrowserConsoleLogOutput } from "./log-output";
 
-describe("Global constant LOGGER", () => {
+describe("SimpleLogger", () => {
 
-    describe("SimpleLogger", () => {
+    describe("SimpleLogger impl", () => {
         let debugOutSpy: Spy;
         let errorOutSpy: Spy;
         let infoOutSpy: Spy;
@@ -203,10 +202,10 @@ describe("Global constant LOGGER", () => {
         });
 
         describe("NumberedCurlyBracesFormatter", () => {
-            let formatter: NumberedCurlyBracesFormatter;
+            let formatter: NumberedCurlyBrackesFormatter;
 
             beforeEach(() => {
-                formatter = new NumberedCurlyBracesFormatter();
+                formatter = new NumberedCurlyBrackesFormatter();
             });
 
             it("should replace \"{0}, {1}, {2}, ...\" with supplied arguments based on zero-based index", () => {

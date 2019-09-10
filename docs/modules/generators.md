@@ -1,14 +1,18 @@
 **[TS Utilities](../README.md)**
 
-[Globals](../README.md) › [&quot;generators/id-generator&quot;](_generators_id_generator_.md)
+[Globals](../README.md) › [Generators](generators.md)
 
-# External module: "generators/id-generator"
+# External module: Generators
 
 ## Index
 
+### Classes
+
+* [UUID](../classes/generators.uuid.md)
+
 ### Functions
 
-* [idGenerator](_generators_id_generator_.md#idgenerator)
+* [idGenerator](generators.md#idgenerator)
 
 ## Functions
 
@@ -16,7 +20,7 @@
 
 ▸ **idGenerator**(`max`: number): *IterableIterator‹number›*
 
-*Defined in [generators/id-generator.ts:6](https://github.com/Juraji/ts-utilities/blob/9554ddb/src/lib/generators/id-generator.ts#L6)*
+*Defined in [generators/id-generator.ts:11](https://github.com/Juraji/ts-utilities/blob/7643b75/src/generators/id-generator.ts#L11)*
 
 Generate numerical ID's (from 0 up).
 

@@ -3,12 +3,17 @@
  */
 
 // Promisify
-export { promisify } from "./lib/promisify/promisify";
-export { promisifyResolve } from "./lib/promisify/promisify-resolve";
+export * from "./lib/promisify/promisify";
+export * from "./lib/promisify/promisify-resolve";
 
 // Simple Logger
-export { LOGGER, SimpleLogger } from "./lib/simple-logger/simple-logger";
+export * from "./lib/simple-logger/simple-logger";
+export * from "./lib/simple-logger/init";
+export * from "./lib/simple-logger/level";
+export * from "./lib/simple-logger/log-formatter";
+export * from "./lib/simple-logger/log-output";
+export * from "./lib/simple-logger/simple-logger-config";
 
 // Generators
-export { idGenerator } from "./lib/generators/id-generator";
-export { UUID } from "./lib/generators/uuid-generator";
+export * from "./lib/generators/id-generator";
+export * from "./lib/generators/uuid-generator";

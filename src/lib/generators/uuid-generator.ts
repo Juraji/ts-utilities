@@ -1,3 +1,8 @@
+/**
+ * @module Generators
+ */
+/** */
+
 /* tslint:disable:no-bitwise */
 export class UUID {
     // Random value lookup-table
