@@ -27,7 +27,7 @@
 
 ▸ **debug**(`message`: string): *void*
 
-Defined in simple-logger/log-output.ts:11
+*Defined in [simple-logger/log-output.ts:11](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/simple-logger/log-output.ts#L11)*
 
 Log DEBUG message.
 
@@ -45,7 +45,7 @@ ___
 
 ▸ **error**(`message`: string): *void*
 
-Defined in simple-logger/log-output.ts:17
+*Defined in [simple-logger/log-output.ts:17](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/simple-logger/log-output.ts#L17)*
 
 Log ERROR message.
 
@@ -63,7 +63,7 @@ ___
 
 ▸ **info**(`message`: string): *void*
 
-Defined in simple-logger/log-output.ts:23
+*Defined in [simple-logger/log-output.ts:23](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/simple-logger/log-output.ts#L23)*
 
 Log INFO message.
 
@@ -81,7 +81,7 @@ ___
 
 ▸ **warn**(`message`: string): *void*
 
-Defined in simple-logger/log-output.ts:29
+*Defined in [simple-logger/log-output.ts:29](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/simple-logger/log-output.ts#L29)*
 
 Log WARN message.
 

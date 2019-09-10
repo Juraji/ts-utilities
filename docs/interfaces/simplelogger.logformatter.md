@@ -25,7 +25,7 @@
 
 ▸ **format**(`template`: string, ...`args`: any[]): *string*
 
-Defined in simple-logger/log-formatter.ts:12
+*Defined in [simple-logger/log-formatter.ts:12](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/simple-logger/log-formatter.ts#L12)*
 
 Format the given template and arguments to a string for log output.
 

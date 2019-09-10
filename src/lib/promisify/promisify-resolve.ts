@@ -36,7 +36,7 @@ export function promisifyResolve<T1, T2, T3, T4, T5, R>(
  * promisifyResolve is an extension on the promisify utility in Node.
  * It converts resolve-reject-style functions to Promise functions in order to make them support async/await.
  *
- * <code>
+ * <pre>
  *     class MyClass {
  *          public myFunction(arg: string,
  *                            resolve: (result: string) => void,
@@ -45,7 +45,7 @@ export function promisifyResolve<T1, T2, T3, T4, T5, R>(
  *
  *      const obj = new MyClass();
  *      const myFunctionP: Promise<string> = promisifyResolve(obj.myFunction)(arg1);
- * </code>
+ * </pre>
  *
  * @param original resolve-reject-style function.
  * @param context An optional this-context

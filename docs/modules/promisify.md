@@ -17,7 +17,7 @@
 
 ▸ **promisify**<**R**>(`fn`: function, `context?`: ThisType‹any›): *function*
 
-Defined in promisify/promisify.ts:10
+*Defined in [promisify/promisify.ts:10](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/promisify/promisify.ts#L10)*
 
 promisify is a Node utility function to convert Continuation-passing style functions.
 to Promise functions in order to make them support async/await.
@@ -60,7 +60,7 @@ A function, with the same interface, resulting in a Promise.
 
 ▸ **promisify**(`fn`: function, `context?`: ThisType‹any›): *function*
 
-Defined in promisify/promisify.ts:14
+*Defined in [promisify/promisify.ts:14](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/promisify/promisify.ts#L14)*
 
 promisify is a Node utility function to convert Continuation-passing style functions.
 to Promise functions in order to make them support async/await.
@@ -99,7 +99,7 @@ A function, with the same interface, resulting in a Promise.
 
 ▸ **promisify**<**T1**, **R**>(`fn`: function, `context?`: ThisType‹any›): *function*
 
-Defined in promisify/promisify.ts:18
+*Defined in [promisify/promisify.ts:18](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/promisify/promisify.ts#L18)*
 
 promisify is a Node utility function to convert Continuation-passing style functions.
 to Promise functions in order to make them support async/await.
@@ -151,7 +151,7 @@ Name | Type |
 
 ▸ **promisify**<**T1**>(`fn`: function, `context?`: ThisType‹any›): *function*
 
-Defined in promisify/promisify.ts:22
+*Defined in [promisify/promisify.ts:22](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/promisify/promisify.ts#L22)*
 
 promisify is a Node utility function to convert Continuation-passing style functions.
 to Promise functions in order to make them support async/await.
@@ -201,7 +201,7 @@ Name | Type |
 
 ▸ **promisify**<**T1**, **T2**, **R**>(`fn`: function, `context?`: ThisType‹any›): *function*
 
-Defined in promisify/promisify.ts:26
+*Defined in [promisify/promisify.ts:26](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/promisify/promisify.ts#L26)*
 
 promisify is a Node utility function to convert Continuation-passing style functions.
 to Promise functions in order to make them support async/await.
@@ -257,7 +257,7 @@ Name | Type |
 
 ▸ **promisify**<**T1**, **T2**>(`fn`: function, `context?`: ThisType‹any›): *function*
 
-Defined in promisify/promisify.ts:30
+*Defined in [promisify/promisify.ts:30](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/promisify/promisify.ts#L30)*
 
 promisify is a Node utility function to convert Continuation-passing style functions.
 to Promise functions in order to make them support async/await.
@@ -311,7 +311,7 @@ Name | Type |
 
 ▸ **promisify**<**T1**, **T2**, **T3**, **R**>(`fn`: function, `context?`: ThisType‹any›): *function*
 
-Defined in promisify/promisify.ts:34
+*Defined in [promisify/promisify.ts:34](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/promisify/promisify.ts#L34)*
 
 promisify is a Node utility function to convert Continuation-passing style functions.
 to Promise functions in order to make them support async/await.
@@ -371,7 +371,7 @@ Name | Type |
 
 ▸ **promisify**<**T1**, **T2**, **T3**>(`fn`: function, `context?`: ThisType‹any›): *function*
 
-Defined in promisify/promisify.ts:38
+*Defined in [promisify/promisify.ts:38](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/promisify/promisify.ts#L38)*
 
 promisify is a Node utility function to convert Continuation-passing style functions.
 to Promise functions in order to make them support async/await.
@@ -429,7 +429,7 @@ Name | Type |
 
 ▸ **promisify**<**T1**, **T2**, **T3**, **T4**, **R**>(`fn`: function, `context?`: ThisType‹any›): *function*
 
-Defined in promisify/promisify.ts:42
+*Defined in [promisify/promisify.ts:42](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/promisify/promisify.ts#L42)*
 
 promisify is a Node utility function to convert Continuation-passing style functions.
 to Promise functions in order to make them support async/await.
@@ -493,7 +493,7 @@ Name | Type |
 
 ▸ **promisify**<**T1**, **T2**, **T3**, **T4**>(`fn`: function, `context?`: ThisType‹any›): *function*
 
-Defined in promisify/promisify.ts:46
+*Defined in [promisify/promisify.ts:46](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/promisify/promisify.ts#L46)*
 
 promisify is a Node utility function to convert Continuation-passing style functions.
 to Promise functions in order to make them support async/await.
@@ -555,7 +555,7 @@ Name | Type |
 
 ▸ **promisify**<**T1**, **T2**, **T3**, **T4**, **T5**, **R**>(`fn`: function, `context?`: ThisType‹any›): *function*
 
-Defined in promisify/promisify.ts:50
+*Defined in [promisify/promisify.ts:50](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/promisify/promisify.ts#L50)*
 
 promisify is a Node utility function to convert Continuation-passing style functions.
 to Promise functions in order to make them support async/await.
@@ -623,7 +623,7 @@ Name | Type |
 
 ▸ **promisify**<**T1**, **T2**, **T3**, **T4**, **T5**>(`fn`: function, `context?`: ThisType‹any›): *function*
 
-Defined in promisify/promisify.ts:54
+*Defined in [promisify/promisify.ts:54](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/promisify/promisify.ts#L54)*
 
 promisify is a Node utility function to convert Continuation-passing style functions.
 to Promise functions in order to make them support async/await.
@@ -693,12 +693,12 @@ ___
 
 ▸ **promisifyResolve**<**R**>(`fn`: function, `context?`: ThisType‹any›): *function*
 
-Defined in promisify/promisify-resolve.ts:10
+*Defined in [promisify/promisify-resolve.ts:10](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/promisify/promisify-resolve.ts#L10)*
 
 promisifyResolve is an extension on the promisify utility in Node.
 It converts resolve-reject-style functions to Promise functions in order to make them support async/await.
 
-<code>
+<pre>
     class MyClass {
          public myFunction(arg: string,
                            resolve: (result: string) => void,
@@ -707,7 +707,7 @@ It converts resolve-reject-style functions to Promise functions in order to make
 
      const obj = new MyClass();
      const myFunctionP: Promise<string> = promisifyResolve(obj.myFunction)(arg1);
-</code>
+</pre>
 
 **Type parameters:**
 
@@ -738,12 +738,12 @@ A function, with the same interface, resulting in a Promise.
 
 ▸ **promisifyResolve**<**T1**, **R**>(`fn`: function, `context?`: ThisType‹any›): *function*
 
-Defined in promisify/promisify-resolve.ts:14
+*Defined in [promisify/promisify-resolve.ts:14](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/promisify/promisify-resolve.ts#L14)*
 
 promisifyResolve is an extension on the promisify utility in Node.
 It converts resolve-reject-style functions to Promise functions in order to make them support async/await.
 
-<code>
+<pre>
     class MyClass {
          public myFunction(arg: string,
                            resolve: (result: string) => void,
@@ -752,7 +752,7 @@ It converts resolve-reject-style functions to Promise functions in order to make
 
      const obj = new MyClass();
      const myFunctionP: Promise<string> = promisifyResolve(obj.myFunction)(arg1);
-</code>
+</pre>
 
 **Type parameters:**
 
@@ -792,12 +792,12 @@ Name | Type |
 
 ▸ **promisifyResolve**<**T1**, **T2**, **R**>(`fn`: function, `context?`: ThisType‹any›): *function*
 
-Defined in promisify/promisify-resolve.ts:18
+*Defined in [promisify/promisify-resolve.ts:18](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/promisify/promisify-resolve.ts#L18)*
 
 promisifyResolve is an extension on the promisify utility in Node.
 It converts resolve-reject-style functions to Promise functions in order to make them support async/await.
 
-<code>
+<pre>
     class MyClass {
          public myFunction(arg: string,
                            resolve: (result: string) => void,
@@ -806,7 +806,7 @@ It converts resolve-reject-style functions to Promise functions in order to make
 
      const obj = new MyClass();
      const myFunctionP: Promise<string> = promisifyResolve(obj.myFunction)(arg1);
-</code>
+</pre>
 
 **Type parameters:**
 
@@ -850,12 +850,12 @@ Name | Type |
 
 ▸ **promisifyResolve**<**T1**, **T2**, **T3**, **R**>(`fn`: function, `context?`: ThisType‹any›): *function*
 
-Defined in promisify/promisify-resolve.ts:22
+*Defined in [promisify/promisify-resolve.ts:22](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/promisify/promisify-resolve.ts#L22)*
 
 promisifyResolve is an extension on the promisify utility in Node.
 It converts resolve-reject-style functions to Promise functions in order to make them support async/await.
 
-<code>
+<pre>
     class MyClass {
          public myFunction(arg: string,
                            resolve: (result: string) => void,
@@ -864,7 +864,7 @@ It converts resolve-reject-style functions to Promise functions in order to make
 
      const obj = new MyClass();
      const myFunctionP: Promise<string> = promisifyResolve(obj.myFunction)(arg1);
-</code>
+</pre>
 
 **Type parameters:**
 
@@ -912,12 +912,12 @@ Name | Type |
 
 ▸ **promisifyResolve**<**T1**, **T2**, **T3**, **T4**, **R**>(`fn`: function, `context?`: ThisType‹any›): *function*
 
-Defined in promisify/promisify-resolve.ts:26
+*Defined in [promisify/promisify-resolve.ts:26](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/promisify/promisify-resolve.ts#L26)*
 
 promisifyResolve is an extension on the promisify utility in Node.
 It converts resolve-reject-style functions to Promise functions in order to make them support async/await.
 
-<code>
+<pre>
     class MyClass {
          public myFunction(arg: string,
                            resolve: (result: string) => void,
@@ -926,7 +926,7 @@ It converts resolve-reject-style functions to Promise functions in order to make
 
      const obj = new MyClass();
      const myFunctionP: Promise<string> = promisifyResolve(obj.myFunction)(arg1);
-</code>
+</pre>
 
 **Type parameters:**
 
@@ -978,12 +978,12 @@ Name | Type |
 
 ▸ **promisifyResolve**<**T1**, **T2**, **T3**, **T4**, **T5**, **R**>(`fn`: function, `context?`: ThisType‹any›): *function*
 
-Defined in promisify/promisify-resolve.ts:30
+*Defined in [promisify/promisify-resolve.ts:30](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/promisify/promisify-resolve.ts#L30)*
 
 promisifyResolve is an extension on the promisify utility in Node.
 It converts resolve-reject-style functions to Promise functions in order to make them support async/await.
 
-<code>
+<pre>
     class MyClass {
          public myFunction(arg: string,
                            resolve: (result: string) => void,
@@ -992,7 +992,7 @@ It converts resolve-reject-style functions to Promise functions in order to make
 
      const obj = new MyClass();
      const myFunctionP: Promise<string> = promisifyResolve(obj.myFunction)(arg1);
-</code>
+</pre>
 
 **Type parameters:**
 

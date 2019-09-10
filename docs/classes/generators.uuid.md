@@ -10,72 +10,18 @@
 
 ## Index
 
-### Constructors
-
-* [constructor](generators.uuid.md#private-constructor)
-
-### Properties
-
-* [lookup](generators.uuid.md#private-lookup)
-
 ### Methods
 
-* [generate](generators.uuid.md#private-generate)
-* [generator](generators.uuid.md#private-generator)
 * [generate](generators.uuid.md#static-generate)
 * [generator](generators.uuid.md#static-generator)
 
-## Constructors
-
-### `Private` constructor
-
-\+ **new UUID**(): *[UUID](generators.uuid.md)*
-
-Defined in generators/uuid-generator.ts:9
-
-**Returns:** *[UUID](generators.uuid.md)*
-
-## Properties
-
-### `Private` lookup
-
-• **lookup**: *string[]*
-
-Defined in generators/uuid-generator.ts:9
-
 ## Methods
-
-### `Private` generate
-
-▸ **generate**(): *string*
-
-Defined in generators/uuid-generator.ts:33
-
-**Returns:** *string*
-
-___
-
-### `Private` generator
-
-▸ **generator**(`max`: number): *IterableIterator‹string›*
-
-Defined in generators/uuid-generator.ts:51
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`max` | number |
-
-**Returns:** *IterableIterator‹string›*
-
-___
 
 ### `Static` generate
 
 ▸ **generate**(): *string*
 
-Defined in generators/uuid-generator.ts:21
+*Defined in [generators/uuid-generator.ts:21](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/generators/uuid-generator.ts#L21)*
 
 Generates a single random UUID
 
@@ -87,7 +33,7 @@ ___
 
 ▸ **generator**(`max`: number): *IterableIterator‹string›*
 
-Defined in generators/uuid-generator.ts:29
+*Defined in [generators/uuid-generator.ts:29](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/generators/uuid-generator.ts#L29)*
 
 Returns an iterator of random UUIDs
 

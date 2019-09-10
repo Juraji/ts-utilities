@@ -20,7 +20,7 @@
 
 ▸ **idGenerator**(`max`: number): *IterableIterator‹number›*
 
-Defined in generators/id-generator.ts:11
+*Defined in [generators/id-generator.ts:11](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/generators/id-generator.ts#L11)*
 
 Generate numerical ID's (from 0 up).
 

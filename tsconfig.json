@@ -29,7 +29,7 @@
         "name": "TS Utilities",
         "theme": "markdown",
         "ignoreCompilerErrors": true,
-        "excludePrivate": false,
+        "excludePrivate": true,
         "excludeNotExported": true,
         "excludeExternals": true,
         "exclude": "**/*+(public-api|test|.spec).ts",
