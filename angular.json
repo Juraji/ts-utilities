@@ -5,31 +5,31 @@
     "projects": {
         "ts-utilities": {
             "projectType": "library",
-            "root": "projects/ts-utilities",
-            "sourceRoot": "projects/ts-utilities/src",
+            "root": "",
+            "sourceRoot": "src",
             "prefix": "lib",
             "architect": {
                 "build": {
                     "builder": "@angular-devkit/build-ng-packagr:build",
                     "options": {
-                        "tsConfig": "projects/ts-utilities/tsconfig.lib.json",
-                        "project": "projects/ts-utilities/ng-package.json"
+                        "tsConfig": "tsconfig.lib.json",
+                        "project": "ng-package.json"
                     }
                 },
                 "test": {
                     "builder": "@angular-devkit/build-angular:karma",
                     "options": {
-                        "main": "projects/ts-utilities/src/test.ts",
-                        "tsConfig": "projects/ts-utilities/tsconfig.spec.json",
-                        "karmaConfig": "projects/ts-utilities/karma.conf.js"
+                        "main": "src/test.ts",
+                        "tsConfig": "tsconfig.spec.json",
+                        "karmaConfig": "karma.conf.js"
                     }
                 },
                 "lint": {
                     "builder": "@angular-devkit/build-angular:tslint",
                     "options": {
                         "tsConfig": [
-                            "projects/ts-utilities/tsconfig.lib.json",
-                            "projects/ts-utilities/tsconfig.spec.json"
+                            "tsconfig.lib.json",
+                            "tsconfig.spec.json"
                         ],
                         "exclude": [
                             "**/node_modules/**"
