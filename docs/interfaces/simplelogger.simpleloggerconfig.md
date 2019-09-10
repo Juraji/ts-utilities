@@ -22,7 +22,7 @@
 
 • **formatter**: *[LogFormatter](simplelogger.logformatter.md)*
 
-*Defined in [simple-logger/simple-logger-config.ts:16](https://github.com/Juraji/ts-utilities/blob/7643b75/src/simple-logger/simple-logger-config.ts#L16)*
+Defined in simple-logger/simple-logger-config.ts:16
 
 An Implementation of {@see LogFormatter}
 
@@ -32,7 +32,7 @@ ___
 
 • **level**: *[Level](../enums/simplelogger.level.md)*
 
-*Defined in [simple-logger/simple-logger-config.ts:12](https://github.com/Juraji/ts-utilities/blob/7643b75/src/simple-logger/simple-logger-config.ts#L12)*
+Defined in simple-logger/simple-logger-config.ts:12
 
 One of Level, e.g. Level.DEBUG
 
@@ -42,6 +42,6 @@ ___
 
 • **out**: *[LogOutput](simplelogger.logoutput.md)*
 
-*Defined in [simple-logger/simple-logger-config.ts:14](https://github.com/Juraji/ts-utilities/blob/7643b75/src/simple-logger/simple-logger-config.ts#L14)*
+Defined in simple-logger/simple-logger-config.ts:14
 
 An Implementation of {@see LogOutput}

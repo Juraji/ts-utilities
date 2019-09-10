@@ -32,7 +32,7 @@ Output: "My log with replacements like 123."
 
 *Implementation of [LogFormatter](../interfaces/simplelogger.logformatter.md)*
 
-*Defined in [simple-logger/log-formatter.ts:23](https://github.com/Juraji/ts-utilities/blob/7643b75/src/simple-logger/log-formatter.ts#L23)*
+Defined in simple-logger/log-formatter.ts:23
 
 **Parameters:**
 

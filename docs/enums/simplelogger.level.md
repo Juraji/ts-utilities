@@ -23,7 +23,7 @@ Each level will have all lower levels enabled as well.
 
 • **DEBUG**: = 4
 
-*Defined in [simple-logger/level.ts:15](https://github.com/Juraji/ts-utilities/blob/7643b75/src/simple-logger/level.ts#L15)*
+Defined in simple-logger/level.ts:15
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **ERROR**: = 1
 
-*Defined in [simple-logger/level.ts:12](https://github.com/Juraji/ts-utilities/blob/7643b75/src/simple-logger/level.ts#L12)*
+Defined in simple-logger/level.ts:12
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **INFO**: = 3
 
-*Defined in [simple-logger/level.ts:14](https://github.com/Juraji/ts-utilities/blob/7643b75/src/simple-logger/level.ts#L14)*
+Defined in simple-logger/level.ts:14
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 • **OFF**: = 0
 
-*Defined in [simple-logger/level.ts:11](https://github.com/Juraji/ts-utilities/blob/7643b75/src/simple-logger/level.ts#L11)*
+Defined in simple-logger/level.ts:11
 
 ___
 
@@ -55,4 +55,4 @@ ___
 
 • **WARN**: = 2
 
-*Defined in [simple-logger/level.ts:13](https://github.com/Juraji/ts-utilities/blob/7643b75/src/simple-logger/level.ts#L13)*
+Defined in simple-logger/level.ts:13

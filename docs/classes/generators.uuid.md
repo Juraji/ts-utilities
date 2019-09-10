@@ -31,7 +31,7 @@
 
 \+ **new UUID**(): *[UUID](generators.uuid.md)*
 
-*Defined in [generators/uuid-generator.ts:9](https://github.com/Juraji/ts-utilities/blob/7643b75/src/generators/uuid-generator.ts#L9)*
+Defined in generators/uuid-generator.ts:9
 
 **Returns:** *[UUID](generators.uuid.md)*
 
@@ -41,7 +41,7 @@
 
 • **lookup**: *string[]*
 
-*Defined in [generators/uuid-generator.ts:9](https://github.com/Juraji/ts-utilities/blob/7643b75/src/generators/uuid-generator.ts#L9)*
+Defined in generators/uuid-generator.ts:9
 
 ## Methods
 
@@ -49,7 +49,7 @@
 
 ▸ **generate**(): *string*
 
-*Defined in [generators/uuid-generator.ts:33](https://github.com/Juraji/ts-utilities/blob/7643b75/src/generators/uuid-generator.ts#L33)*
+Defined in generators/uuid-generator.ts:33
 
 **Returns:** *string*
 
@@ -59,7 +59,7 @@ ___
 
 ▸ **generator**(`max`: number): *IterableIterator‹string›*
 
-*Defined in [generators/uuid-generator.ts:51](https://github.com/Juraji/ts-utilities/blob/7643b75/src/generators/uuid-generator.ts#L51)*
+Defined in generators/uuid-generator.ts:51
 
 **Parameters:**
 
@@ -75,7 +75,7 @@ ___
 
 ▸ **generate**(): *string*
 
-*Defined in [generators/uuid-generator.ts:21](https://github.com/Juraji/ts-utilities/blob/7643b75/src/generators/uuid-generator.ts#L21)*
+Defined in generators/uuid-generator.ts:21
 
 Generates a single random UUID
 
@@ -87,7 +87,7 @@ ___
 
 ▸ **generator**(`max`: number): *IterableIterator‹string›*
 
-*Defined in [generators/uuid-generator.ts:29](https://github.com/Juraji/ts-utilities/blob/7643b75/src/generators/uuid-generator.ts#L29)*
+Defined in generators/uuid-generator.ts:29
 
 Returns an iterator of random UUIDs
 

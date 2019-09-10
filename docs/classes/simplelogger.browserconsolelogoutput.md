@@ -31,7 +31,7 @@ Log to console
 
 *Implementation of [LogOutput](../interfaces/simplelogger.logoutput.md)*
 
-*Defined in [simple-logger/log-output.ts:36](https://github.com/Juraji/ts-utilities/blob/7643b75/src/simple-logger/log-output.ts#L36)*
+Defined in simple-logger/log-output.ts:36
 
 **Parameters:**
 
@@ -49,7 +49,7 @@ ___
 
 *Implementation of [LogOutput](../interfaces/simplelogger.logoutput.md)*
 
-*Defined in [simple-logger/log-output.ts:41](https://github.com/Juraji/ts-utilities/blob/7643b75/src/simple-logger/log-output.ts#L41)*
+Defined in simple-logger/log-output.ts:41
 
 **Parameters:**
 
@@ -67,7 +67,7 @@ ___
 
 *Implementation of [LogOutput](../interfaces/simplelogger.logoutput.md)*
 
-*Defined in [simple-logger/log-output.ts:45](https://github.com/Juraji/ts-utilities/blob/7643b75/src/simple-logger/log-output.ts#L45)*
+Defined in simple-logger/log-output.ts:45
 
 **Parameters:**
 
@@ -85,7 +85,7 @@ ___
 
 *Implementation of [LogOutput](../interfaces/simplelogger.logoutput.md)*
 
-*Defined in [simple-logger/log-output.ts:50](https://github.com/Juraji/ts-utilities/blob/7643b75/src/simple-logger/log-output.ts#L50)*
+Defined in simple-logger/log-output.ts:50
 
 **Parameters:**
 

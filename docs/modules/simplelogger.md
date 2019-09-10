@@ -33,7 +33,7 @@
 
 ▸ **LOGGER**(): *[SimpleLogger](../classes/simplelogger.simplelogger-1.md)*
 
-*Defined in [simple-logger/init.ts:25](https://github.com/Juraji/ts-utilities/blob/7643b75/src/simple-logger/init.ts#L25)*
+Defined in simple-logger/init.ts:25
 
 Create or get the current logger
 
