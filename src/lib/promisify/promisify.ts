@@ -80,9 +80,10 @@ export function promisify(original: Function, context?: ThisType<any>): () => Pr
         throw new Error(`[Promisify] invalid argument for origin, expected "Function" got "${typeof original}"`);
     }
 
-    function fn(...args) {
+    function fn() {
+        const args = arguments;
         return new Promise((resolve, reject) => {
-            original.call(context || this, ...args, (err, result) => {
+            original.call(context || null, ...args, (err, result) => {
                 if (err) {
                     return reject(err);
                 } else {

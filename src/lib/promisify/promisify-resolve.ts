@@ -57,9 +57,10 @@ export function promisifyResolve(original: Function, context?: ThisType<any>): (
         throw new Error(`[Promisify] invalid argument for origin, expected "Function" got "${typeof original}"`);
     }
 
-    function fn(...args) {
+    function fn() {
+        const args = arguments;
         return new Promise((resolve, reject) =>
-            original.call(context || this, ...args, resolve, reject));
+            original.call(context || null, ...args, resolve, reject));
     }
 
     Object.setPrototypeOf(fn, Object.getPrototypeOf(original));
