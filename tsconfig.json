@@ -38,6 +38,7 @@
         "preserveConstEnums": true,
         "stripInternal": true,
         "module": "commonjs",
-        "readme": "none"
+        "readme": "none",
+        "gitRevision": "master"
     }
 }

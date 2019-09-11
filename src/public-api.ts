@@ -6,6 +6,10 @@
 export * from "./lib/promisify/promisify";
 export * from "./lib/promisify/promisify-resolve";
 
+// PromiseQueue
+export * from "./lib/promise-queue/promise-queue";
+export * from "./lib/promise-queue/queue-result";
+
 // Simple Logger
 export * from "./lib/simple-logger/simple-logger";
 export * from "./lib/simple-logger/init";

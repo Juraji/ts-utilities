@@ -21,7 +21,7 @@
 
 ▸ **generate**(): *string*
 
-*Defined in [generators/uuid-generator.ts:21](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/generators/uuid-generator.ts#L21)*
+*Defined in [generators/uuid-generator.ts:21](https://github.com/Juraji/ts-utilities/blob/master/src/lib/generators/uuid-generator.ts#L21)*
 
 Generates a single random UUID
 
@@ -33,7 +33,7 @@ ___
 
 ▸ **generator**(`max`: number): *IterableIterator‹string›*
 
-*Defined in [generators/uuid-generator.ts:29](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/generators/uuid-generator.ts#L29)*
+*Defined in [generators/uuid-generator.ts:29](https://github.com/Juraji/ts-utilities/blob/master/src/lib/generators/uuid-generator.ts#L29)*
 
 Returns an iterator of random UUIDs
 

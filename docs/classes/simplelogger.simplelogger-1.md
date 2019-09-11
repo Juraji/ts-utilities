@@ -33,7 +33,7 @@
 
 \+ **new SimpleLogger**(`config`: [SimpleLoggerConfig](../interfaces/simplelogger.simpleloggerconfig.md)): *[SimpleLogger](simplelogger.simplelogger-1.md)*
 
-*Defined in [simple-logger/simple-logger.ts:17](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/simple-logger/simple-logger.ts#L17)*
+*Defined in [simple-logger/simple-logger.ts:17](https://github.com/Juraji/ts-utilities/blob/master/src/lib/simple-logger/simple-logger.ts#L17)*
 
 **Parameters:**
 
@@ -49,7 +49,7 @@ Name | Type |
 
 • **get level**(): *[Level](../enums/simplelogger.level.md)*
 
-*Defined in [simple-logger/simple-logger.ts:15](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/simple-logger/simple-logger.ts#L15)*
+*Defined in [simple-logger/simple-logger.ts:15](https://github.com/Juraji/ts-utilities/blob/master/src/lib/simple-logger/simple-logger.ts#L15)*
 
 Get current logging level.
 
@@ -61,7 +61,7 @@ Get current logging level.
 
 ▸ **configure**(`config`: Partial‹[SimpleLoggerConfig](../interfaces/simplelogger.simpleloggerconfig.md)›): *void*
 
-*Defined in [simple-logger/simple-logger.ts:37](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/simple-logger/simple-logger.ts#L37)*
+*Defined in [simple-logger/simple-logger.ts:37](https://github.com/Juraji/ts-utilities/blob/master/src/lib/simple-logger/simple-logger.ts#L37)*
 
 Reconfigure this logger.
 Note that only the properties, present in the config parameter are set.
@@ -81,7 +81,7 @@ ___
 
 ▸ **debug**(`tpl`: string, ...`args`: any[]): *void*
 
-*Defined in [simple-logger/simple-logger.ts:46](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/simple-logger/simple-logger.ts#L46)*
+*Defined in [simple-logger/simple-logger.ts:46](https://github.com/Juraji/ts-utilities/blob/master/src/lib/simple-logger/simple-logger.ts#L46)*
 
 Log at level DEBUG.
 
@@ -100,7 +100,7 @@ ___
 
 ▸ **error**(`tpl`: string, ...`args`: any[]): *void*
 
-*Defined in [simple-logger/simple-logger.ts:55](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/simple-logger/simple-logger.ts#L55)*
+*Defined in [simple-logger/simple-logger.ts:55](https://github.com/Juraji/ts-utilities/blob/master/src/lib/simple-logger/simple-logger.ts#L55)*
 
 Log at level ERROR.
 
@@ -119,7 +119,7 @@ ___
 
 ▸ **info**(`tpl`: string, ...`args`: any[]): *void*
 
-*Defined in [simple-logger/simple-logger.ts:64](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/simple-logger/simple-logger.ts#L64)*
+*Defined in [simple-logger/simple-logger.ts:64](https://github.com/Juraji/ts-utilities/blob/master/src/lib/simple-logger/simple-logger.ts#L64)*
 
 Log at level INFO.
 
@@ -138,7 +138,7 @@ ___
 
 ▸ **setLevel**(`level`: [Level](../enums/simplelogger.level.md)): *void*
 
-*Defined in [simple-logger/simple-logger.ts:27](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/simple-logger/simple-logger.ts#L27)*
+*Defined in [simple-logger/simple-logger.ts:27](https://github.com/Juraji/ts-utilities/blob/master/src/lib/simple-logger/simple-logger.ts#L27)*
 
 Set target logging level.
 
@@ -156,7 +156,7 @@ ___
 
 ▸ **warn**(`tpl`: string, ...`args`: any[]): *void*
 
-*Defined in [simple-logger/simple-logger.ts:74](https://github.com/Juraji/ts-utilities/blob/8790d6f/src/lib/simple-logger/simple-logger.ts#L74)*
+*Defined in [simple-logger/simple-logger.ts:74](https://github.com/Juraji/ts-utilities/blob/master/src/lib/simple-logger/simple-logger.ts#L74)*
 
 Log at level WARN.
 
