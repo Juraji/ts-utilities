@@ -1,8 +1,7 @@
-**[TS Utilities](../README.md)**
-
-[Globals](../README.md) › [PromiseQueue](../modules/promisequeue.md) › [QueueProgress](promisequeue.queueprogress.md)
+[TS Utilities](../README.md) › [PromiseQueue](../modules/promisequeue.md) › [QueueProgress](promisequeue.queueprogress.md)
 
 # Interface: QueueProgress
+
 
 Queue progress message
 

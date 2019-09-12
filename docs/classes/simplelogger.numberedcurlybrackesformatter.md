@@ -1,8 +1,7 @@
-**[TS Utilities](../README.md)**
-
-[Globals](../README.md) › [SimpleLogger](../modules/simplelogger.md) › [NumberedCurlyBrackesFormatter](simplelogger.numberedcurlybrackesformatter.md)
+[TS Utilities](../README.md) › [SimpleLogger](../modules/simplelogger.md) › [NumberedCurlyBrackesFormatter](simplelogger.numberedcurlybrackesformatter.md)
 
 # Class: NumberedCurlyBrackesFormatter
+
 
 Replaces numbered curly brackets ("{0}") with the supplied arguments, by zero-based index.
 

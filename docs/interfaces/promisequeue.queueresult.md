@@ -1,8 +1,7 @@
-**[TS Utilities](../README.md)**
-
-[Globals](../README.md) › [PromiseQueue](../modules/promisequeue.md) › [QueueResult](promisequeue.queueresult.md)
+[TS Utilities](../README.md) › [PromiseQueue](../modules/promisequeue.md) › [QueueResult](promisequeue.queueresult.md)
 
 # Interface: QueueResult <**T**>
+
 
 Queue result
 

@@ -1,8 +1,7 @@
-**[TS Utilities](../README.md)**
-
-[Globals](../README.md) › [SimpleLogger](../modules/simplelogger.md) › [SimpleLogger](simplelogger.simplelogger-1.md)
+[TS Utilities](../README.md) › [SimpleLogger](../modules/simplelogger.md) › [SimpleLogger](simplelogger.simplelogger-1.md)
 
 # Class: SimpleLogger
+
 
 ## Hierarchy
 

@@ -1,8 +1,7 @@
-**[TS Utilities](../README.md)**
-
-[Globals](../README.md) › [SimpleLogger](simplelogger.md)
+[TS Utilities](../README.md) › [SimpleLogger](simplelogger.md)
 
 # External module: SimpleLogger
+
 
 ## Index
 

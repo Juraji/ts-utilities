@@ -1,8 +1,7 @@
-**[TS Utilities](../README.md)**
-
-[Globals](../README.md) › [SimpleLogger](../modules/simplelogger.md) › [BrowserConsoleLogOutput](simplelogger.browserconsolelogoutput.md)
+[TS Utilities](../README.md) › [SimpleLogger](../modules/simplelogger.md) › [BrowserConsoleLogOutput](simplelogger.browserconsolelogoutput.md)
 
 # Class: BrowserConsoleLogOutput
+
 
 Log to console
 

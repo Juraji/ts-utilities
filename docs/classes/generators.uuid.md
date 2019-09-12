@@ -1,8 +1,7 @@
-**[TS Utilities](../README.md)**
-
-[Globals](../README.md) › [Generators](../modules/generators.md) › [UUID](generators.uuid.md)
+[TS Utilities](../README.md) › [Generators](../modules/generators.md) › [UUID](generators.uuid.md)
 
 # Class: UUID
+
 
 ## Hierarchy
 

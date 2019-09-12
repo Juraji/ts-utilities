@@ -1,8 +1,7 @@
-**[TS Utilities](../README.md)**
-
-[Globals](../README.md) › [Generators](generators.md)
+[TS Utilities](../README.md) › [Generators](generators.md)
 
 # External module: Generators
+
 
 ## Index
 

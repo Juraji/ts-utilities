@@ -1,8 +1,7 @@
-**[TS Utilities](README.md)**
-
-[Globals](README.md)
+[TS Utilities](README.md)
 
 # TS Utilities
+
 
 ## Index
 

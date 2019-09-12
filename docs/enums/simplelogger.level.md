@@ -1,8 +1,7 @@
-**[TS Utilities](../README.md)**
-
-[Globals](../README.md) › [SimpleLogger](../modules/simplelogger.md) › [Level](simplelogger.level.md)
+[TS Utilities](../README.md) › [SimpleLogger](../modules/simplelogger.md) › [Level](simplelogger.level.md)
 
 # Enumeration: Level
+
 
 Logging level presets.
 Each level will have all lower levels enabled as well.

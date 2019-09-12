@@ -1,8 +1,7 @@
-**[TS Utilities](../README.md)**
-
-[Globals](../README.md) › [SimpleLogger](../modules/simplelogger.md) › [SimpleLoggerConfig](simplelogger.simpleloggerconfig.md)
+[TS Utilities](../README.md) › [SimpleLogger](../modules/simplelogger.md) › [SimpleLoggerConfig](simplelogger.simpleloggerconfig.md)
 
 # Interface: SimpleLoggerConfig
+
 
 ## Hierarchy
 

@@ -1,8 +1,7 @@
-**[TS Utilities](../README.md)**
-
-[Globals](../README.md) › [PromiseQueue](promisequeue.md)
+[TS Utilities](../README.md) › [PromiseQueue](promisequeue.md)
 
 # External module: PromiseQueue
+
 
 ## Index
 

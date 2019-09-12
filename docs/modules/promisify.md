@@ -1,8 +1,7 @@
-**[TS Utilities](../README.md)**
-
-[Globals](../README.md) › [Promisify](promisify.md)
+[TS Utilities](../README.md) › [Promisify](promisify.md)
 
 # External module: Promisify
+
 
 ## Index
 

@@ -1,8 +1,7 @@
-**[TS Utilities](../README.md)**
-
-[Globals](../README.md) › [SimpleLogger](../modules/simplelogger.md) › [CurlyBracketsFormatter](simplelogger.curlybracketsformatter.md)
+[TS Utilities](../README.md) › [SimpleLogger](../modules/simplelogger.md) › [CurlyBracketsFormatter](simplelogger.curlybracketsformatter.md)
 
 # Class: CurlyBracketsFormatter
+
 
 Replaces curly brackets ("{}") with the supplied arguments, in order of occurrence.
 

@@ -1,8 +1,7 @@
-**[TS Utilities](../README.md)**
-
-[Globals](../README.md) › [SimpleLogger](../modules/simplelogger.md) › [LogFormatter](simplelogger.logformatter.md)
+[TS Utilities](../README.md) › [SimpleLogger](../modules/simplelogger.md) › [LogFormatter](simplelogger.logformatter.md)
 
 # Interface: LogFormatter
+
 
 ## Hierarchy
 

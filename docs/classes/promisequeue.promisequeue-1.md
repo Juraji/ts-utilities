@@ -1,8 +1,7 @@
-**[TS Utilities](../README.md)**
-
-[Globals](../README.md) › [PromiseQueue](../modules/promisequeue.md) › [PromiseQueue](promisequeue.promisequeue-1.md)
+[TS Utilities](../README.md) › [PromiseQueue](../modules/promisequeue.md) › [PromiseQueue](promisequeue.promisequeue-1.md)
 
 # Class: PromiseQueue <**T, R**>
+
 
 ## Type parameters
 
