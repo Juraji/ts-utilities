@@ -9,7 +9,7 @@ import { QueueProgress, QueueResult } from "./queue-result";
 /**
  * Mapping function from queue item to result
  */
-export type PromiseQueueWorker<T, R> = (item: T) => R | Promise<R>;
+export type PromiseQueueTask<T, R> = (item: T) => R | Promise<R>;
 
 export class PromiseQueue<T, R> {
 
@@ -18,10 +18,10 @@ export class PromiseQueue<T, R> {
      *
      * <pre>
      *     // Where service is some async implementation
-     *     const worker = (userId: number) => service.fetchUser(userId);
+     *     const task = (userId: number) => service.fetchUser(userId);
      *
      *     // Where userIDs is an array of user IDs to fetch
-     *     const queueResult = new PromiseQueue(worker)
+     *     const queueResult = new PromiseQueue(task)
      *         .queueItems(userIDs);
      *
      *     queueResult.progress.subscribe({
@@ -32,37 +32,25 @@ export class PromiseQueue<T, R> {
      *     queueResult.result.then(users => this.doSomethingWithUsers(users))
      * </pre>
      *
-     * @param worker A mapping function, from T to R | Promise<R>.
-     * @param synchronous When true will execute worker per item, one at a time
-     * @param threads The count of concurrent executions of the worker.
-     *                Ignored when synchronous=true
+     * @param task A mapping function, from T to R | Promise<R>.
+     * @param threads The count of concurrent executions for the task.
      */
-    constructor(private readonly worker: PromiseQueueWorker<T, R>,
-                private readonly synchronous: boolean = false,
-                private readonly threads: number = 8) {
-        if (typeof worker !== "function") {
-            throw new Error(`Type of worker should be "function", got "${typeof worker}"`);
+    constructor(private readonly task: PromiseQueueTask<T, R>,
+                public readonly threads: number = 8) {
+        if (typeof task !== "function") {
+            throw new Error(`Type of task should be of type "function", got "${typeof task}".`);
         }
-        if (!synchronous && threads < 1) {
-            throw new Error("Thread count must be at least 1");
+        if (threads < 1) {
+            throw new Error(`Thread count must be at least 1, got ${threads}.`);
         }
     }
 
     /**
-     * Call worker n times
-     * @param count The amount of times to call worker
-     * @param worker A mapping function, from number to R | Promise<R>
-     * @param synchronous hen true will execute worker one at a time
-     * @param threads The count of concurrent executions of the worker.
-     *                Ignored when synchronous=true
+     * Create a synchronous PromiseQueue
+     * @param task A mapping function, from number to R | Promise<R>
      */
-    public static nTimes<R>(count: number,
-                            worker: PromiseQueueWorker<number, R>,
-                            synchronous: boolean = true,
-                            threads?: number): QueueResult<R[]> {
-        const numbers = Array.from((new Array(count)).keys());
-        return new PromiseQueue(worker, synchronous, threads)
-            .queueItems(numbers);
+    public static synchronous<T, R>(task: PromiseQueueTask<T, R>): PromiseQueue<T, R> {
+        return new PromiseQueue<T, R>(task, 1);
     }
 
     private static emitProgress(progress: Subject<QueueProgress>, current: number, total: number) {
@@ -74,7 +62,7 @@ export class PromiseQueue<T, R> {
      * Start execution of queue
      * @param items The queue items
      */
-    public queueItems(items: T[]): QueueResult<R[]> {
+    public queue(items: T[]): QueueResult<R> {
         const progress = new Subject<QueueProgress>();
         let result: Promise<R[]>;
 
@@ -82,7 +70,7 @@ export class PromiseQueue<T, R> {
             // Resolve an empty array if items is empty
             result = Promise.resolve([]);
         } else {
-            if (this.synchronous || this.threads === 1) {
+            if (this.threads === 1) {
                 // Run synchronous queue
                 result = this.queueSyncImpl(items, progress);
             } else {
@@ -106,7 +94,7 @@ export class PromiseQueue<T, R> {
 
         // Work through queue
         for (const item of items) {
-            results.push(await this.callWorker(item));
+            results.push(await this.runTask(item));
             PromiseQueue.emitProgress(progress, results.length, items.length);
         }
 
@@ -120,7 +108,7 @@ export class PromiseQueue<T, R> {
         // Work through queue
         while (queue.length > 0) {
             const work = queue.splice(0, this.threads);
-            const rs = await Promise.all(work.map(e => this.callWorker(e)));
+            const rs = await Promise.all(work.map(e => this.runTask(e)));
 
             results.push(...rs);
             PromiseQueue.emitProgress(progress, results.length, items.length);
@@ -129,7 +117,7 @@ export class PromiseQueue<T, R> {
         return results;
     }
 
-    private callWorker(item: T): Promise<R> {
-        return Promise.resolve(this.worker(item));
+    private runTask(item: T): Promise<R> {
+        return Promise.resolve(this.task(item));
     }
 }

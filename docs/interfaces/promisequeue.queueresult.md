@@ -35,8 +35,8 @@ ___
 
 ###  result
 
-• **result**: *Promise‹T›*
+• **result**: *Promise‹T[]›*
 
 *Defined in [promise-queue/queue-result.ts:25](https://github.com/Juraji/ts-utilities/blob/master/src/lib/promise-queue/queue-result.ts#L25)*
 
-Worker results
+Task results

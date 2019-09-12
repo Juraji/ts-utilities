@@ -1,0 +1,17 @@
+{
+    "extends": "./tsconfig.json",
+    "typedocOptions": {
+        "out": "docs",
+        "name": "TS Utilities",
+        "theme": "markdown",
+        "ignoreCompilerErrors": true,
+        "excludePrivate": true,
+        "excludeNotExported": true,
+        "excludeExternals": false,
+        "exclude": "**/*+(public-api|test|.spec).ts",
+        "preserveConstEnums": true,
+        "stripInternal": true,
+        "readme": "none",
+        "gitRevision": "master"
+    }
+}

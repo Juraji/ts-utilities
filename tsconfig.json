@@ -22,23 +22,5 @@
     "angularCompilerOptions": {
         "fullTemplateTypeCheck": true,
         "strictInjectionParameters": true
-    },
-    "typedocOptions": {
-        "mode": "modules",
-        "out": "docs",
-        "name": "TS Utilities",
-        "theme": "markdown",
-        "ignoreCompilerErrors": true,
-        "excludePrivate": true,
-        "excludeNotExported": true,
-        "excludeExternals": true,
-        "exclude": "**/*+(public-api|test|.spec).ts",
-        "target": "es2015",
-        "moduleResolution": "node",
-        "preserveConstEnums": true,
-        "stripInternal": true,
-        "module": "commonjs",
-        "readme": "none",
-        "gitRevision": "master"
     }
 }

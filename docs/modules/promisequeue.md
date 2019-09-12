@@ -17,13 +17,13 @@
 
 ### Type aliases
 
-* [PromiseQueueWorker](promisequeue.md#promisequeueworker)
+* [PromiseQueueTask](promisequeue.md#promisequeuetask)
 
 ## Type aliases
 
-###  PromiseQueueWorker
+###  PromiseQueueTask
 
-Ƭ **PromiseQueueWorker**: *function*
+Ƭ **PromiseQueueTask**: *function*
 
 *Defined in [promise-queue/promise-queue.ts:12](https://github.com/Juraji/ts-utilities/blob/master/src/lib/promise-queue/promise-queue.ts#L12)*
 

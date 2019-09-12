@@ -21,8 +21,8 @@ export interface QueueProgress {
  * Queue result
  */
 export interface QueueResult<T> {
-    /** Worker results */
-    result: Promise<T>;
+    /** Task results */
+    result: Promise<T[]>;
     /** Pogress messages emitter {@see QueueProgress} */
     progress: Observable<QueueProgress>;
 }

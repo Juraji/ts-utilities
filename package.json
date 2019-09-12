@@ -6,7 +6,7 @@
         "build": "ng build",
         "test": "ng test --watch=false",
         "lint": "ng lint",
-        "documentation": "rimraf docs && typedoc"
+        "documentation": "rimraf docs && typedoc --tsconfig tsconfig.typedoc.json src/"
     },
     "private": true,
     "peerDependencies": {
