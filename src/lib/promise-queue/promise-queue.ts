@@ -1,8 +1,3 @@
-/**
- * @module PromiseQueue
- */
-/** */
-
 import { Subject } from "rxjs";
 import { QueueProgress, QueueResult } from "./queue-result";
 

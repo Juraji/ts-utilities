@@ -1,9 +1,4 @@
 /**
- * @module Generators
- */
-/** */
-
-/**
  * Generate numerical ID's (from 0 up).
  * @param max The maximum ID before completing the iterable.
  * @return An Iterator, yielding numerical id's starting at 0 until max is reached.

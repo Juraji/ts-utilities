@@ -1,9 +1,4 @@
 /**
- * @module SimpleLogger
- */
-/** */
-
-/**
  * Logging level presets.
  * Each level will have all lower levels enabled as well.
  */

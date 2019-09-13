@@ -1,11 +1,6 @@
-/**
- * @module SimpleLogger
- */
-/** */
-
 import { Level } from "./level";
-import { LogOutput } from "./log-output";
-import { LogFormatter } from "./log-formatter";
+import { LogOutput } from "../output/log-output";
+import { LogFormatter } from "../formatters/log-formatter";
 
 export interface SimpleLoggerConfig {
     /** One of Level, e.g. Level.DEBUG */

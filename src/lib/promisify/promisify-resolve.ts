@@ -1,8 +1,3 @@
-/**
- * @module Promisify
- */
-/** */
-
 type NodeResolve<T> = (result?: T) => void;
 type NodeReject = (err?: any) => void;
 

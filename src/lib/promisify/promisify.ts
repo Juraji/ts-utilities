@@ -1,8 +1,3 @@
-/**
- * @module Promisify
- */
-/** */
-
 type NodeCallback = (err?: any) => void;
 type NodeResultCallback<R> = (err: any, result?: R) => void;
 

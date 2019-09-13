@@ -1,4 +1,4 @@
-[TS Utilities](../README.md) › [Generators](../modules/generators.md) › [UUID](generators.uuid.md)
+[TS Utilities](../README.md) › [UUID](uuid.md)
 
 # Class: UUID
 
@@ -11,8 +11,8 @@
 
 ### Methods
 
-* [generate](generators.uuid.md#static-generate)
-* [generator](generators.uuid.md#static-generator)
+* [generate](uuid.md#static-generate)
+* [generator](uuid.md#static-generator)
 
 ## Methods
 
@@ -20,7 +20,7 @@
 
 ▸ **generate**(): *string*
 
-*Defined in [generators/uuid-generator.ts:21](https://github.com/Juraji/ts-utilities/blob/master/src/lib/generators/uuid-generator.ts#L21)*
+*Defined in [lib/generators/uuid-generator.ts:16](https://github.com/Juraji/ts-utilities/blob/master/src/lib/generators/uuid-generator.ts#L16)*
 
 Generates a single random UUID
 
@@ -32,7 +32,7 @@ ___
 
 ▸ **generator**(`max`: number): *IterableIterator‹string›*
 
-*Defined in [generators/uuid-generator.ts:29](https://github.com/Juraji/ts-utilities/blob/master/src/lib/generators/uuid-generator.ts#L29)*
+*Defined in [lib/generators/uuid-generator.ts:24](https://github.com/Juraji/ts-utilities/blob/master/src/lib/generators/uuid-generator.ts#L24)*
 
 Returns an iterator of random UUIDs
 

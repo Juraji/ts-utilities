@@ -1,19 +1,14 @@
-/**
- * @module SimpleLogger
- */
-/** */
-
-import { SimpleLogger } from "./simple-logger";
-import { Level } from "./level";
-import { BrowserConsoleLogOutput } from "./log-output";
-import { CurlyBracketsFormatter } from "./log-formatter";
+import { SimpleLogger, SimpleLoggerImpl } from "./simple-logger";
+import { Level } from "./config/level";
+import { CurlyBracketsLogFormatter } from "./formatters/curly-brackets-log-formatter";
+import { BrowserConsoleLogOutput } from "./output/browser-console-log-output";
 
 const _LOGGER = {
     INSTANCE: null,
     DEFAULTS: {
         level: Level.INFO,
         out: new BrowserConsoleLogOutput(),
-        formatter: new CurlyBracketsFormatter()
+        formatter: new CurlyBracketsLogFormatter()
     }
 };
 
@@ -24,7 +19,7 @@ const _LOGGER = {
  */
 export function LOGGER(): SimpleLogger {
     if (!_LOGGER.INSTANCE) {
-        _LOGGER.INSTANCE = new SimpleLogger(_LOGGER.DEFAULTS);
+        _LOGGER.INSTANCE = new SimpleLoggerImpl(_LOGGER.DEFAULTS);
     }
 
     return _LOGGER.INSTANCE;

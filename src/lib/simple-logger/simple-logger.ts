@@ -1,17 +1,65 @@
+import { SimpleLoggerConfig } from "./config/simple-logger-config";
+import { Level } from "./config/level";
+
 /**
- * @module SimpleLogger
+ * Simple Logger interface
  */
-/** */
-
-import { SimpleLoggerConfig } from "./simple-logger-config";
-import { Level } from "./level";
-
-export class SimpleLogger {
-    private readonly config: SimpleLoggerConfig;
+export interface SimpleLogger {
+    /**
+     * Current logging level.
+     */
+    readonly level: Level;
 
     /**
-     * Get current logging level.
+     * Set target logging level.
+     * @param level The new logging level.
      */
+    setLevel(level: Level): void;
+
+    /**
+     * Reconfigure this logger.
+     * Note that only the properties, present in the config parameter are set.
+     * Properties not present in the config are kept in their current state.
+     * @param config New configuration options to apply
+     */
+    configure(config: Partial<SimpleLoggerConfig>): void;
+
+    /**
+     * Log at level DEBUG.
+     * @param tpl A log message.
+     * @param args Optional replacement parameters.
+     */
+    debug(tpl: string, ...args: any[]): void;
+
+    /**
+     * Log at level ERROR.
+     * @param tpl A log message.
+     * @param args Optional replacement parameters.
+     */
+    error(tpl: string, ...args: any[]): void;
+
+    /**
+     * Log at level INFO.
+     * @param tpl A log message.
+     * @param args Optional replacement parameters.
+     */
+    info(tpl: string, ...args: any[]): void;
+
+    /**
+     * Log at level WARN.
+     * @param tpl A log message.
+     * @param args Optional replacement parameters.
+     */
+    warn(tpl: string, ...args: any[]): void;
+}
+
+/**
+ * @ignore
+ * Simple Logger implementation
+ */
+export class SimpleLoggerImpl implements SimpleLogger {
+    private readonly config: SimpleLoggerConfig;
+
     public get level(): Level {
         return this.config.level;
     }
@@ -20,57 +68,26 @@ export class SimpleLogger {
         this.config = Object.create(config);
     }
 
-    /**
-     * Set target logging level.
-     * @param level The new logging level.
-     */
     public setLevel(level: Level) {
         this.configure({level});
     }
 
-    /**
-     * Reconfigure this logger.
-     * Note that only the properties, present in the config parameter are set.
-     * Properties not present in the config are kept in their current state.
-     * @param config New configuration options to apply
-     */
     public configure(config: Partial<SimpleLoggerConfig>) {
         Object.assign(this.config, config);
     }
 
-    /**
-     * Log at level DEBUG.
-     * @param tpl A log message.
-     * @param args Optional replacement parameters.
-     */
     public debug(tpl: string, ...args: any[]): void {
         this.doLog(Level.DEBUG, this.config.out.debug, tpl, args);
     }
 
-    /**
-     * Log at level ERROR.
-     * @param tpl A log message.
-     * @param args Optional replacement parameters.
-     */
     public error(tpl: string, ...args: any[]): void {
         this.doLog(Level.ERROR, this.config.out.error, tpl, args);
     }
 
-    /**
-     * Log at level INFO.
-     * @param tpl A log message.
-     * @param args Optional replacement parameters.
-     */
     public info(tpl: string, ...args: any[]): void {
         this.doLog(Level.INFO, this.config.out.info, tpl, args);
     }
 
-
-    /**
-     * Log at level WARN.
-     * @param tpl A log message.
-     * @param args Optional replacement parameters.
-     */
     public warn(tpl: string, ...args: any[]): void {
         this.doLog(Level.WARN, this.config.out.warn, tpl, args);
     }

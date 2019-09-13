@@ -1,8 +1,3 @@
-/**
- * @module PromiseQueue
- */
-/** */
-
 import { Observable } from "rxjs";
 
 /**

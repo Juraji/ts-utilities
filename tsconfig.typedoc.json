@@ -1,6 +1,7 @@
 {
     "extends": "./tsconfig.json",
     "typedocOptions": {
+        "mode": "file",
         "out": "docs",
         "name": "TS Utilities",
         "theme": "markdown",

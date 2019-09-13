@@ -1,4 +1,4 @@
-[TS Utilities](../README.md) › [SimpleLogger](../modules/simplelogger.md) › [LogOutput](simplelogger.logoutput.md)
+[TS Utilities](../README.md) › [LogOutput](logoutput.md)
 
 # Interface: LogOutput
 
@@ -9,16 +9,16 @@
 
 ## Implemented by
 
-* [BrowserConsoleLogOutput](../classes/simplelogger.browserconsolelogoutput.md)
+* [BrowserConsoleLogOutput](../classes/browserconsolelogoutput.md)
 
 ## Index
 
 ### Methods
 
-* [debug](simplelogger.logoutput.md#debug)
-* [error](simplelogger.logoutput.md#error)
-* [info](simplelogger.logoutput.md#info)
-* [warn](simplelogger.logoutput.md#warn)
+* [debug](logoutput.md#debug)
+* [error](logoutput.md#error)
+* [info](logoutput.md#info)
+* [warn](logoutput.md#warn)
 
 ## Methods
 
@@ -26,7 +26,7 @@
 
 ▸ **debug**(`message`: string): *void*
 
-*Defined in [simple-logger/log-output.ts:11](https://github.com/Juraji/ts-utilities/blob/master/src/lib/simple-logger/log-output.ts#L11)*
+*Defined in [lib/simple-logger/output/log-output.ts:6](https://github.com/Juraji/ts-utilities/blob/master/src/lib/simple-logger/output/log-output.ts#L6)*
 
 Log DEBUG message.
 
@@ -44,7 +44,7 @@ ___
 
 ▸ **error**(`message`: string): *void*
 
-*Defined in [simple-logger/log-output.ts:17](https://github.com/Juraji/ts-utilities/blob/master/src/lib/simple-logger/log-output.ts#L17)*
+*Defined in [lib/simple-logger/output/log-output.ts:12](https://github.com/Juraji/ts-utilities/blob/master/src/lib/simple-logger/output/log-output.ts#L12)*
 
 Log ERROR message.
 
@@ -62,7 +62,7 @@ ___
 
 ▸ **info**(`message`: string): *void*
 
-*Defined in [simple-logger/log-output.ts:23](https://github.com/Juraji/ts-utilities/blob/master/src/lib/simple-logger/log-output.ts#L23)*
+*Defined in [lib/simple-logger/output/log-output.ts:18](https://github.com/Juraji/ts-utilities/blob/master/src/lib/simple-logger/output/log-output.ts#L18)*
 
 Log INFO message.
 
@@ -80,7 +80,7 @@ ___
 
 ▸ **warn**(`message`: string): *void*
 
-*Defined in [simple-logger/log-output.ts:29](https://github.com/Juraji/ts-utilities/blob/master/src/lib/simple-logger/log-output.ts#L29)*
+*Defined in [lib/simple-logger/output/log-output.ts:24](https://github.com/Juraji/ts-utilities/blob/master/src/lib/simple-logger/output/log-output.ts#L24)*
 
 Log WARN message.
 
