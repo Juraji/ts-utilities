@@ -1,10 +1,6 @@
 import { Subject } from "rxjs";
-import { QueueProgress, QueueResult } from "./queue-result";
 
-/**
- * Mapping function from queue item to result
- */
-export type PromiseQueueTask<T, R> = (item: T) => R | Promise<R>;
+import { PromiseQueueTask, QueueProgress, QueueResult } from "./promise-queue.interface";
 
 export class PromiseQueue<T, R> {
 

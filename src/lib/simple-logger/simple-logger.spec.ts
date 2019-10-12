@@ -1,8 +1,8 @@
-import createSpy = jasmine.createSpy;
-import Spy = jasmine.Spy;
 import { LOGGER } from "./init";
 import { Level } from "./config/level";
 import { CurlyBracketsLogFormatter } from "./formatters/curly-brackets-log-formatter";
+import createSpy = jasmine.createSpy;
+import Spy = jasmine.Spy;
 
 describe("SimpleLogger", () => {
     let debugOutSpy: Spy;

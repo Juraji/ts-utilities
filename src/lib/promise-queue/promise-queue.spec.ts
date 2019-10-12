@@ -1,5 +1,6 @@
-import { PromiseQueue } from "./promise-queue";
 import { fakeAsync, tick } from "@angular/core/testing";
+
+import { PromiseQueue } from "./promise-queue";
 import createSpy = jasmine.createSpy;
 import any = jasmine.any;
 

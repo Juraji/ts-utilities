@@ -67,7 +67,7 @@ export class AdvancedLogFormatter implements LogFormatter {
         if (template == null || template.length === 0) {
             // Return empty templates as null
             return undefined;
-        } else if (template.indexOf("%") === -1){
+        } else if (template.indexOf("%") === -1) {
             // Template does not contain any nodes
             return template;
         } else {

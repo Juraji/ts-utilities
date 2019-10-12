@@ -7,8 +7,8 @@ export { promisify } from "./lib/promisify/promisify";
 export { promisifyResolve } from "./lib/promisify/promisify-resolve";
 
 // PromiseQueue
-export { PromiseQueue, PromiseQueueTask } from "./lib/promise-queue/promise-queue";
-export { QueueResult, QueueProgress } from "./lib/promise-queue/queue-result";
+export { PromiseQueue } from "./lib/promise-queue/promise-queue";
+export { QueueResult, QueueProgress, PromiseQueueTask } from "./lib/promise-queue/promise-queue.interface";
 
 // Simple Logger
 export { SimpleLogger } from "./lib/simple-logger/simple-logger";
